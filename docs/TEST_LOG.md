@@ -15,5 +15,7 @@
 | 2026-09-06 | FASE 2 candidata | Godot 4.7 headless | Impedir monedas duplicadas y validar prompts de objeto, bolsa llena y contenedor | Superada (`PHASE_2_SMOKE_OK`) | — |
 | 2026-09-06 | FASE 2 candidata | Forward+, 1920×1080 | Render visual de sala, primitivas, punto de mira y HUD | Superada | Falta prueba jugable de 5–10 minutos |
 | 2026-09-06 | FASE 2 candidata | Prueba manual del usuario | Movimiento de cámara con ratón tras añadir el HUD | Falló; corregido, pendiente de repetir | El HUD interceptaba los eventos de ratón; sus controles ahora usan `MOUSE_FILTER_IGNORE` |
+| 2026-09-06 | FASE 2 | Prueba manual del usuario | Bucle completo, cámara, capacidad, monedas y porcentaje | Aprobada por el usuario | Se solicitó bajar y suavizar el audio provisional antes de etiquetar |
+| 2026-09-06 | FASE 2 | Godot 4.7 | Ajuste de tonos provisionales | Corregido | Frecuencias, amplitud y volumen reducidos |
 
 Para cada fallo futuro anotar pasos de reproducción, resultado esperado, resultado obtenido y severidad.

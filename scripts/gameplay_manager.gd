@@ -40,8 +40,8 @@ var _pending_reward: int = 0
 
 
 func _ready() -> void:
-	pickup_audio.stream = _make_tone(660.0, 0.07)
-	empty_audio.stream = _make_tone(220.0, 0.18)
+	pickup_audio.stream = _make_tone(430.0, 0.06)
+	empty_audio.stream = _make_tone(170.0, 0.14)
 	_spawn_trash()
 	state_changed.emit()
 
@@ -112,7 +112,7 @@ func _make_tone(frequency: float, duration: float) -> AudioStreamWAV:
 	for sample_index in sample_count:
 		var time := float(sample_index) / float(stream.mix_rate)
 		var envelope := 1.0 - float(sample_index) / float(sample_count)
-		var sample := 128.0 + sin(TAU * frequency * time) * 72.0 * envelope
+		var sample := 128.0 + sin(TAU * frequency * time) * 36.0 * envelope
 		audio_data[sample_index] = clampi(roundi(sample), 0, 255)
 	stream.data = audio_data
 	return stream

@@ -8,5 +8,7 @@ script = ExtResource("1_manager")
 [node name="TrashItems" type="Node3D" parent="."]
 
 [node name="PickupAudio" type="AudioStreamPlayer" parent="."]
+volume_db = -12.0
 
 [node name="EmptyAudio" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
