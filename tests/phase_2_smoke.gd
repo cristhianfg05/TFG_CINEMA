@@ -22,16 +22,20 @@ func _run() -> void:
 	var manager = get_first_node_in_group("gameplay_manager")
 	var trash_bin = get_first_node_in_group("trash_bin")
 	var hud = get_first_node_in_group("gameplay_hud")
+	var player = get_first_node_in_group("player")
 	_expect(manager != null, "Gameplay manager is missing")
 	_expect(trash_bin != null, "Trash bin is missing")
 	_expect(hud != null, "Gameplay HUD is missing")
 	_expect(get_nodes_in_group("trash_item").size() == 20, "Expected 20 trash items")
+	if player:
+		var interaction_raycast := player.get_node("Head/Camera3D/InteractionRayCast3D") as RayCast3D
+		_expect(interaction_raycast.collide_with_areas, "Interaction raycast ignores aiming spheres")
+		_expect(interaction_raycast.collision_mask & 2 != 0, "Interaction raycast cannot see trash aiming layer")
 	if hud:
 		var hud_root := hud.get_node_or_null("HUDRoot") as Control
 		_expect(hud_root != null, "Gameplay HUD root is missing")
 		if hud_root:
 			_expect_hud_ignores_mouse(hud_root)
-	var player = get_first_node_in_group("player")
 	if player:
 		var yaw_before: float = player.rotation.y
 		player._apply_mouse_look(Vector2(40.0, 0.0))
@@ -48,12 +52,12 @@ func _run() -> void:
 		_expect(manager.empty_audio.stream is AudioStreamWAV, "Emptying sound was not generated")
 		var initial_item = get_nodes_in_group("trash_item")[0]
 		_expect(
-			String(initial_item.get_interaction_prompt()).begins_with("Recogida automática"),
-			"Valid trash does not explain proximity pickup"
+			String(initial_item.get_interaction_prompt()).begins_with("E — Recoger"),
+			"Valid trash does not expose the pickup prompt"
 		)
 		_expect(
-			initial_item.get_node_or_null("AutoPickupArea/PickupRadius") is CollisionShape3D,
-			"Trash item has no automatic pickup radius"
+			initial_item.get_node_or_null("InteractionArea/FocusRadius") is CollisionShape3D,
+			"Trash item has no enlarged aiming radius"
 		)
 
 		var collected_before_full := 0

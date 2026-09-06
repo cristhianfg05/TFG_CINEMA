@@ -44,14 +44,27 @@ func _run() -> void:
 
 	if manager and player:
 		_expect(is_equal_approx(manager.pickup_duration, 1.0), "Base pickup is not deliberately slow")
-		var auto_item = get_nodes_in_group("trash_item")[0]
-		var remaining_before_auto: int = manager.remaining_trash
-		auto_item._on_auto_pickup_body_entered(player)
-		_expect(auto_item.is_collection_pending(), "Walking over trash did not start collection")
+		var proximity_item = get_nodes_in_group("trash_item")[0]
+		var focus_area := proximity_item.get_node("InteractionArea") as Area3D
+		_expect(not focus_area.monitoring, "Aiming area must not collect trash by body overlap")
+		_expect(
+			player._resolve_interactable(focus_area) == proximity_item,
+			"Aiming at the invisible sphere did not resolve its trash item"
+		)
+		var remaining_before_interaction: int = manager.remaining_trash
+		player.global_position = proximity_item.global_position
+		await physics_frame
+		await physics_frame
+		_expect(
+			manager.remaining_trash == remaining_before_interaction,
+			"Walking over trash collected it without pressing E"
+		)
+		proximity_item.interact(player)
+		_expect(proximity_item.is_collection_pending(), "Pressing E did not start collection")
 		await create_timer(1.15).timeout
 		_expect(
-			manager.remaining_trash == remaining_before_auto - 1,
-			"Proximity pickup did not collect trash without aiming"
+			manager.remaining_trash == remaining_before_interaction - 1,
+			"E interaction did not collect trash after its delay"
 		)
 
 	if manager and lost_found:

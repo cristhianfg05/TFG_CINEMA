@@ -6,12 +6,13 @@ Esta es la primera vertical slice. Debe jugarse desde cero sin la tecla de reini
 
 1. Ejecuta el proyecto con F5.
 2. Pulsa `Nueva partida` para borrar cualquier progreso anterior.
-3. Pasa sobre la basura para recogerla; `E` interactúa con estaciones y guarda el reloj, clic izquierdo destruye únicamente el reloj enfocado y `Esc` abre la pausa.
+3. Apunta cerca de la basura y pulsa `E` para recogerla; clic izquierdo destruye únicamente el reloj enfocado y `Esc` abre la pausa.
 
 ## Recorrido obligatorio
 
 - [ ] El menú permite iniciar una partida nueva.
-- [ ] El objetivo superior permite entender que la basura se recoge al pasar por encima, sin apuntar con el ratón.
+- [ ] La esfera invisible amplía la zona de apuntado y permite seleccionar basura pequeña con facilidad.
+- [ ] Pasar por encima de la basura no la recoge: sigue siendo obligatorio pulsar `E`.
 - [ ] Los dos espectadores hacen un idle muy suave y la pantalla muestra una imagen provisional.
 - [ ] El reloj dorado se distingue claramente de la basura y tiene brillo pulsante.
 - [ ] Al pulsar `E` sobre el reloj, no entra en la bolsa: queda en mano y puede entregarse en el cajón azul por 8 monedas.

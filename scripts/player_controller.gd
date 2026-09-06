@@ -110,7 +110,16 @@ func try_jump() -> bool:
 
 func get_interaction_target() -> Object:
 	if interaction_raycast.is_colliding():
-		return interaction_raycast.get_collider()
+		return _resolve_interactable(interaction_raycast.get_collider() as Node)
+	return null
+
+
+func _resolve_interactable(candidate: Node) -> Node:
+	var current := candidate
+	while current and current != self:
+		if current.has_method("get_interaction_prompt") and current.has_method("interact"):
+			return current
+		current = current.get_parent()
 	return null
 
 
