@@ -50,5 +50,5 @@ El hardware mínimo es una hipótesis de trabajo, no una promesa. Se validará m
 
 - FASE 0 — Preparación y control del alcance: completada el 2026-09-06.
 - FASE 1 — Controlador y sala inicial en bloques: completada y aprobada el 2026-09-06.
-- FASE 2 — Núcleo de limpieza: autorizada; implementación activa.
+- FASE 2 — Núcleo de limpieza: candidata implementada; pendiente de validación manual.
 - No autorizado todavía: progresión, objetos perdidos, NPC ni modelos definitivos de FASE 3 o posteriores.

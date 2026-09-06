@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="TrashDefinition" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://resources/trash/trash_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"bottle"
+display_name = "Botella"
+category = &"container"
+volume = 1.2
+reward = 3
+destination = &"trash_bin"

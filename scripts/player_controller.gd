@@ -1,6 +1,8 @@
 class_name PlayerController
 extends CharacterBody3D
 
+signal interaction_prompt_changed(prompt: String)
+
 @export_category("Movement")
 @export var walk_speed: float = 4.5
 @export var sprint_speed: float = 7.0
@@ -30,6 +32,7 @@ var _gravity: float = 9.8
 var _is_crouching: bool = false
 var _respawn_transform: Transform3D
 var _capsule: CapsuleShape3D
+var _focused_interactable: Node
 
 
 func _ready() -> void:
@@ -82,6 +85,7 @@ func _physics_process(delta: float) -> void:
 	velocity.z = horizontal.z
 
 	move_and_slide()
+	_update_interaction()
 
 	if global_position.y < fall_limit_y:
 		respawn()
@@ -104,6 +108,30 @@ func get_interaction_target() -> Object:
 	if interaction_raycast.is_colliding():
 		return interaction_raycast.get_collider()
 	return null
+
+
+func _update_interaction() -> void:
+	var target := get_interaction_target() as Node
+	if target == null or not target.has_method("get_interaction_prompt"):
+		target = null
+	if target != _focused_interactable:
+		_set_focused_interactable(target)
+
+	var prompt := ""
+	if _focused_interactable and is_instance_valid(_focused_interactable):
+		prompt = _focused_interactable.get_interaction_prompt()
+		if Input.is_action_just_pressed("interact"):
+			_focused_interactable.interact(self)
+	interaction_prompt_changed.emit(prompt)
+
+
+func _set_focused_interactable(target: Node) -> void:
+	if _focused_interactable and is_instance_valid(_focused_interactable):
+		if _focused_interactable.has_method("set_focused"):
+			_focused_interactable.set_focused(false)
+	_focused_interactable = target
+	if _focused_interactable and _focused_interactable.has_method("set_focused"):
+		_focused_interactable.set_focused(true)
 
 
 func is_crouching() -> bool:

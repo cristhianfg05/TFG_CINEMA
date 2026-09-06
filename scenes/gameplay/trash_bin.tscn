@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/trash_bin.gd" id="1_bin"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bin"]
+top_radius = 0.75
+bottom_radius = 0.65
+height = 1.4
+radial_segments = 12
+
+[sub_resource type="CylinderShape3D" id="CylinderShape_bin"]
+height = 1.4
+radius = 0.75
+
+[node name="TrashBin" type="StaticBody3D" groups=["trash_bin"]]
+collision_layer = 1
+collision_mask = 1
+script = ExtResource("1_bin")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.7, 0)
+mesh = SubResource("CylinderMesh_bin")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+position = Vector3(0, 0.7, 0)
+shape = SubResource("CylinderShape_bin")

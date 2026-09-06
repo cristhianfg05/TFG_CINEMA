@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/gameplay_manager.gd" id="1_manager"]
+
+[node name="GameplayManager" type="Node" groups=["gameplay_manager"]]
+script = ExtResource("1_manager")
+
+[node name="TrashItems" type="Node3D" parent="."]
+
+[node name="PickupAudio" type="AudioStreamPlayer" parent="."]
+
+[node name="EmptyAudio" type="AudioStreamPlayer" parent="."]

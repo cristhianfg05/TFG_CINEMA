@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=8 format=3]
 
 [ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="1_player"]
 [ext_resource type="PackedScene" path="res://scenes/rooms/room_01_blockout.tscn" id="2_room"]
+[ext_resource type="PackedScene" path="res://scenes/gameplay/gameplay_manager.tscn" id="3_manager"]
+[ext_resource type="PackedScene" path="res://scenes/gameplay/trash_bin.tscn" id="4_bin"]
+[ext_resource type="PackedScene" path="res://scenes/ui/gameplay_hud.tscn" id="5_hud"]
 
 [sub_resource type="Environment" id="Environment_main"]
 background_mode = 1
@@ -42,3 +45,10 @@ position = Vector3(0, 0.1, 11.5)
 [node name="Room01Blockout" parent="." instance=ExtResource("2_room")]
 
 [node name="Player" parent="." instance=ExtResource("1_player")]
+
+[node name="GameplayManager" parent="." instance=ExtResource("3_manager")]
+
+[node name="TrashBin" parent="." instance=ExtResource("4_bin")]
+position = Vector3(-8.5, 0, 12.5)
+
+[node name="GameplayHUD" parent="." instance=ExtResource("5_hud")]
