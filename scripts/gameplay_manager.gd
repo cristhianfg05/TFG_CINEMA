@@ -38,19 +38,18 @@ const SPAWN_POSITIONS: Array[Vector3] = [
 
 @export var bag_capacity: float = 10.0
 @export var base_bag_capacity: float = 10.0
-@export var base_pickup_cooldown: float = 0.45
+@export var base_pickup_duration: float = 1.0
 
 var bag_volume: float = 0.0
 var coins: int = 0
 var remaining_trash: int = 0
 var total_trash: int = 0
-var pickup_cooldown: float = 0.45
+var pickup_duration: float = 1.0
 var held_lost_items: Array[String] = []
 var lost_item_state: String = "available"
 var purchased_upgrades: Dictionary = {}
 var room_completed: bool = false
 var _pending_reward: int = 0
-var _last_collect_msec: int = -10000
 
 @onready var trash_items: Node3D = $TrashItems
 @onready var lost_items: Node3D = $LostItems
@@ -78,11 +77,8 @@ func can_collect(definition: Resource) -> bool:
 	return definition != null and bag_volume + float(definition.volume) <= bag_capacity + 0.0001
 
 
-func try_collect(item: Node, bypass_cooldown: bool = false) -> bool:
+func try_collect(item: Node, _bypass_delay: bool = false) -> bool:
 	if item == null or not is_instance_valid(item) or item.definition == null:
-		return false
-	var now_msec := Time.get_ticks_msec()
-	if not bypass_cooldown and now_msec - _last_collect_msec < int(pickup_cooldown * 1000.0):
 		return false
 	var definition: Resource = item.definition
 	if not can_collect(definition):
@@ -90,13 +86,29 @@ func try_collect(item: Node, bypass_cooldown: bool = false) -> bool:
 	bag_volume += float(definition.volume)
 	_pending_reward += int(definition.reward)
 	remaining_trash = maxi(0, remaining_trash - 1)
-	_last_collect_msec = now_msec
 	item.collect()
 	if DisplayServer.get_name() != "headless":
 		pickup_audio.play()
 	state_changed.emit()
 	_evaluate_room_completion()
 	return true
+
+
+func request_collect(item: Node) -> void:
+	if item == null or not is_instance_valid(item) or item.definition == null:
+		return
+	if item.has_method("is_collection_pending") and item.is_collection_pending():
+		return
+	if not can_collect(item.definition):
+		notification_requested.emit("La bolsa está llena. Vacíala en el contenedor verde.")
+		return
+	if item.has_method("set_collection_pending"):
+		item.set_collection_pending(true, pickup_duration)
+	await get_tree().create_timer(pickup_duration, false).timeout
+	if not is_instance_valid(item) or item.is_queued_for_deletion():
+		return
+	if not try_collect(item, true) and item.has_method("set_collection_pending"):
+		item.set_collection_pending(false, 0.0)
 
 
 func empty_bag() -> bool:
@@ -217,6 +229,8 @@ func explain_exit_requirements() -> void:
 func get_objective_text() -> String:
 	if room_completed:
 		return "Sala completada — atraviesa la puerta"
+	if get_clean_percent() == 0:
+		return "Pasa sobre la basura para recogerla automáticamente"
 	if get_clean_percent() < 95:
 		return "Objetivo: limpia al menos el 95 %"
 	var next_upgrade := get_next_upgrade()
@@ -227,7 +241,7 @@ func get_objective_text() -> String:
 
 func _apply_upgrades() -> void:
 	bag_capacity = 20.0 if has_upgrade(&"reinforced_bag_1") else base_bag_capacity
-	pickup_cooldown = 0.15 if has_upgrade(&"quick_hands_1") else base_pickup_cooldown
+	pickup_duration = 0.18 if has_upgrade(&"quick_hands_1") else base_pickup_duration
 
 
 func _evaluate_room_completion() -> void:

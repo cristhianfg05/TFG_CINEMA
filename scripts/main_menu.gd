@@ -51,7 +51,7 @@ func _build_ui() -> void:
 	content.add_child(continue_game)
 
 	var hint := Label.new()
-	hint.text = "WASD · Ratón · E interactuar · Clic tirar objeto valioso · Esc pausa"
+	hint.text = "Pasa sobre la basura · E interactuar · Clic tirar objeto valioso · Esc pausa"
 	hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	hint.add_theme_font_size_override("font_size", 17)

@@ -21,5 +21,7 @@
 | 2026-09-06 | FASE 3 candidata | Godot 4.7 headless | Comprar ambas mejoras, aplicar efectos y abrir salida al cumplir requisitos | Superada (`PHASE_3_SMOKE_OK`) | Capacidad 20 y recuperación de recogida reducida verificadas |
 | 2026-09-06 | FASE 3 candidata | Godot 4.7 headless | Autoguardado y restauración de mejoras, reloj y sala completada | Superada (`PHASE_3_SMOKE_OK`) | Formato provisional versión 1 |
 | 2026-09-06 | FASE 3 candidata | Forward+, RTX 2060, 1920×1080 | Render frontal y trasero de pantalla, espectadores y zona de servicios | Superada | Placeholders legibles; falta validar ritmo y comprensión con jugadores |
+| 2026-09-06 | FASE 3 candidata | Godot 4.7 headless | Área de proximidad por basura y recogida sin apuntar | Superada (`PHASE_3_SMOKE_OK`) | El reloj queda excluido de la recogida automática |
+| 2026-09-06 | FASE 3 candidata | Godot 4.7 headless | Contraste de tiempos de recogida base/mejorada | Superada (`PHASE_3_SMOKE_OK`) | 1,00 s base; 0,18 s con `Manos ágiles I` |
 
 Para cada fallo futuro anotar pasos de reproducción, resultado esperado, resultado obtenido y severidad.

@@ -48,8 +48,12 @@ func _run() -> void:
 		_expect(manager.empty_audio.stream is AudioStreamWAV, "Emptying sound was not generated")
 		var initial_item = get_nodes_in_group("trash_item")[0]
 		_expect(
-			String(initial_item.get_interaction_prompt()).begins_with("E — Recoger"),
-			"Valid trash does not expose the pickup prompt"
+			String(initial_item.get_interaction_prompt()).begins_with("Recogida automática"),
+			"Valid trash does not explain proximity pickup"
+		)
+		_expect(
+			initial_item.get_node_or_null("AutoPickupArea/PickupRadius") is CollisionShape3D,
+			"Trash item has no automatic pickup radius"
 		)
 
 		var collected_before_full := 0

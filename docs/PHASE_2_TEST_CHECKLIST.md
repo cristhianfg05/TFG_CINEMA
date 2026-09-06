@@ -4,12 +4,13 @@ Juega el bucle durante unos diez minutos. Los modelos son primitivas provisional
 
 ## Controles nuevos
 
-- Recoger o vaciar: E mientras aparece el mensaje contextual.
+- Recoger basura: pasar por encima de su área de proximidad; no hace falta apuntar.
+- Vaciar: E mientras aparece el mensaje contextual del contenedor.
 - Reiniciar la prueba: R. Esta tecla es solo de depuración.
 
 ## Comprobaciones obligatorias
 
-- [ ] El mensaje `E — Recoger` aparece solo al apuntar a basura válida.
+- [ ] La basura se recoge al pasar cerca, sin apuntarla con el ratón.
 - [ ] Cada objeto desaparece una sola vez al recogerlo.
 - [ ] La bolsa aumenta según el volumen y nunca supera 10.
 - [ ] Con la bolsa llena se rechazan objetos que no caben y aparece un aviso claro.
