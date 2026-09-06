@@ -10,5 +10,6 @@
 | 2026-09-06 | FASE 1 candidata | Godot 4.7 headless | Cargar escenas, 10 acciones, cámara, raycast, 60 butacas y geometría | Superada (`PHASE_1_SMOKE_OK`) | — |
 | 2026-09-06 | FASE 1 candidata | Godot 4.7 headless | Movimiento, cambio de altura al agacharse, salto y reaparición | Superada (`PHASE_1_SMOKE_OK`) | La comodidad requiere prueba humana |
 | 2026-09-06 | FASE 1 candidata | Forward+, RTX 2060 | Renderizar 60 fotogramas a 1920×1080 | Superada | Media: CPU 0,56 ms; GPU 8,07 ms por fotograma; falta prueba jugable sostenida |
+| 2026-09-06 | FASE 1 | Prueba manual del usuario | Recorrido, controles, escala y funcionamiento general | Aprobada por el usuario | — |
 
 Para cada fallo futuro anotar pasos de reproducción, resultado esperado, resultado obtenido y severidad.
