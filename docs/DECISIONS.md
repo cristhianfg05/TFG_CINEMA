@@ -8,6 +8,7 @@
 | D-004 | 2026-09-06 | Hardware mínimo provisional: 4 núcleos, 8 GB RAM y GPU dedicada de 4 GB | Base conservadora para pruebas tempranas | Aceptada provisionalmente; pendiente de medición real |
 | D-005 | 2026-09-06 | Guardar fuentes aprobadas en `source_assets/`; originales pesados y descartes en `source_assets/local_originals/`, fuera de Git | Evitar inflar el repositorio sin sacar Blender de la carpeta de trabajo | Aceptada provisionalmente |
 | D-006 | 2026-09-06 | Usar Forward+ desde la creación del proyecto | Es la decisión bloqueada del plan y la opción indicada para un juego 3D de escritorio | Aceptada |
+| D-007 | 2026-09-06 | Controlador provisional de 1,8 m, cámara a 1,65 m, 4,5 m/s al caminar y 7 m/s al correr | Valores iniciales coherentes con primera persona; deben ajustarse según comodidad | Pendiente de validación manual en FASE 1 |
 
 ## Política de originales pesados
 

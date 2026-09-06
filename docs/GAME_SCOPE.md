@@ -49,5 +49,5 @@ El hardware mínimo es una hipótesis de trabajo, no una promesa. Se validará m
 ## Estado
 
 - FASE 0 — Preparación y control del alcance: completada el 2026-09-06.
-- Próxima fase: FASE 1, pendiente de autorización expresa del usuario.
-- No autorizado todavía: construir la sala, implementar el controlador o generar modelos definitivos.
+- FASE 1 — Controlador y sala inicial en bloques: candidata implementada; pendiente de validación manual.
+- No autorizado todavía: núcleo de limpieza de FASE 2 ni modelos definitivos.

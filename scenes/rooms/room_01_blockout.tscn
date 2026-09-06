@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/room_01_blockout.gd" id="1_room"]
+
+[node name="Room01Blockout" type="Node3D"]
+script = ExtResource("1_room")

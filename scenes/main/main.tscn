@@ -1,3 +1,44 @@
-[gd_scene format=3]
+[gd_scene load_steps=5 format=3]
 
-[node name="Main" type="Node"]
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="1_player"]
+[ext_resource type="PackedScene" path="res://scenes/rooms/room_01_blockout.tscn" id="2_room"]
+
+[sub_resource type="Environment" id="Environment_main"]
+background_mode = 1
+background_color = Color(0.018, 0.02, 0.03, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.32, 0.36, 0.48, 1)
+ambient_light_energy = 0.8
+reflected_light_source = 2
+
+[node name="Main" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_main")
+
+[node name="KeyLight" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-55, -28, 0)
+light_color = Color(1, 0.83, 0.69, 1)
+light_energy = 0.65
+directional_shadow_max_distance = 40.0
+
+[node name="RearHouseLight" type="OmniLight3D" parent="."]
+position = Vector3(0, 4.5, 7)
+light_color = Color(1, 0.72, 0.5, 1)
+light_energy = 2.2
+omni_range = 16.0
+omni_attenuation = 0.7
+
+[node name="FrontHouseLight" type="OmniLight3D" parent="."]
+position = Vector3(0, 4.5, -7)
+light_color = Color(0.52, 0.62, 1, 1)
+light_energy = 1.7
+omni_range = 16.0
+omni_attenuation = 0.7
+
+[node name="RespawnPoint" type="Marker3D" parent="." groups=["respawn_point"]]
+position = Vector3(0, 0.1, 11.5)
+
+[node name="Room01Blockout" parent="." instance=ExtResource("2_room")]
+
+[node name="Player" parent="." instance=ExtResource("1_player")]
