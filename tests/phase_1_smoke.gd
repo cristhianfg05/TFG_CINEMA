@@ -35,7 +35,7 @@ func _run() -> void:
 	await process_frame
 	await physics_frame
 
-	var player := main.get_node_or_null("Player") as PlayerController
+	var player = main.get_node_or_null("Player")
 	_expect(player != null, "PlayerController is missing from main scene")
 	_expect(main.get_node_or_null("RespawnPoint") != null, "RespawnPoint is missing")
 	_expect(main.get_node_or_null("Room01Blockout") != null, "Room blockout is missing")
@@ -56,7 +56,7 @@ func _run() -> void:
 
 		for frame in 12:
 			await physics_frame
-		var start_position := player.global_position
+		var start_position: Vector3 = player.global_position
 		Input.action_press("move_forward")
 		for frame in 18:
 			await physics_frame
@@ -83,7 +83,7 @@ func _run() -> void:
 			if player.is_on_floor():
 				break
 		_expect(player.is_on_floor(), "Player did not settle on the floor before jump test")
-		var jump_started := player.try_jump()
+		var jump_started: bool = player.try_jump()
 		_expect(jump_started, "Jump was rejected while the player was on the floor")
 		_expect(player.velocity.y > 0.0, "Jump did not produce upward velocity")
 
