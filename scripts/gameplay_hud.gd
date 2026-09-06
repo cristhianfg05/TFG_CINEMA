@@ -22,11 +22,13 @@ func _ready() -> void:
 func _build_ui() -> void:
 	var root_control := Control.new()
 	root_control.name = "HUDRoot"
+	root_control.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	root_control.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	add_child(root_control)
 
 	var crosshair := Label.new()
 	crosshair.name = "Crosshair"
+	crosshair.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	crosshair.text = "+"
 	crosshair.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	crosshair.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
@@ -41,6 +43,7 @@ func _build_ui() -> void:
 
 	_prompt_label = Label.new()
 	_prompt_label.name = "Prompt"
+	_prompt_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_prompt_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	_prompt_label.add_theme_font_size_override("font_size", 24)
 	_prompt_label.add_theme_color_override("font_color", Color("ffe9a6"))
@@ -53,6 +56,7 @@ func _build_ui() -> void:
 
 	var stats := VBoxContainer.new()
 	stats.name = "Stats"
+	stats.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	stats.position = Vector2(24, 24)
 	stats.add_theme_constant_override("separation", 4)
 	root_control.add_child(stats)
@@ -66,6 +70,7 @@ func _build_ui() -> void:
 
 func _make_stat_label() -> Label:
 	var label := Label.new()
+	label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	label.add_theme_font_size_override("font_size", 22)
 	label.add_theme_color_override("font_color", Color.WHITE)
 	label.add_theme_color_override("font_outline_color", Color.BLACK)

@@ -49,12 +49,7 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-		rotate_y(deg_to_rad(-event.relative.x * mouse_sensitivity))
-		head.rotation.x = clampf(
-			head.rotation.x + deg_to_rad(-event.relative.y * mouse_sensitivity),
-			deg_to_rad(-pitch_limit_degrees),
-			deg_to_rad(pitch_limit_degrees)
-		)
+		_apply_mouse_look(event.relative)
 	elif event.is_action_pressed("pause"):
 		Input.mouse_mode = (
 			Input.MOUSE_MODE_VISIBLE
@@ -62,6 +57,15 @@ func _unhandled_input(event: InputEvent) -> void:
 			else Input.MOUSE_MODE_CAPTURED
 		)
 		get_viewport().set_input_as_handled()
+
+
+func _apply_mouse_look(relative_motion: Vector2) -> void:
+	rotate_y(deg_to_rad(-relative_motion.x * mouse_sensitivity))
+	head.rotation.x = clampf(
+		head.rotation.x + deg_to_rad(-relative_motion.y * mouse_sensitivity),
+		deg_to_rad(-pitch_limit_degrees),
+		deg_to_rad(pitch_limit_degrees)
+	)
 
 
 func _physics_process(delta: float) -> void:

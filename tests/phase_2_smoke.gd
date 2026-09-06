@@ -26,6 +26,19 @@ func _run() -> void:
 	_expect(trash_bin != null, "Trash bin is missing")
 	_expect(hud != null, "Gameplay HUD is missing")
 	_expect(get_nodes_in_group("trash_item").size() == 20, "Expected 20 trash items")
+	if hud:
+		var hud_root := hud.get_node_or_null("HUDRoot") as Control
+		_expect(hud_root != null, "Gameplay HUD root is missing")
+		if hud_root:
+			_expect_hud_ignores_mouse(hud_root)
+	var player = get_first_node_in_group("player")
+	if player:
+		var yaw_before: float = player.rotation.y
+		player._apply_mouse_look(Vector2(40.0, 0.0))
+		_expect(
+			not is_equal_approx(player.rotation.y, yaw_before),
+			"Mouse look did not rotate the player"
+		)
 	if manager:
 		_expect(manager.total_trash == 20, "Total trash count is incorrect")
 		_expect(manager.remaining_trash == 20, "Initial remaining count is incorrect")
@@ -93,6 +106,16 @@ func _expect(condition: bool, message: String) -> void:
 	if not condition:
 		_failures.append(message)
 		push_error(message)
+
+
+func _expect_hud_ignores_mouse(node: Node) -> void:
+	if node is Control:
+		_expect(
+			node.mouse_filter == Control.MOUSE_FILTER_IGNORE,
+			"HUD control blocks mouse input: %s" % node.name
+		)
+	for child in node.get_children():
+		_expect_hud_ignores_mouse(child)
 
 
 func _finish() -> void:
