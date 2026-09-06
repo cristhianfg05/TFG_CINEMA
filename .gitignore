@@ -1,0 +1,27 @@
+# Godot generated data
+.godot/
+
+# Builds and exported packages
+builds/*
+!builds/.gitkeep
+*.exe
+*.pck
+
+# Local-only heavy originals and rejected generations
+source_assets/local_originals/*
+!source_assets/local_originals/README.md
+
+# Blender temporary/backup files
+*.blend1
+*.blend2
+*.blend@
+
+# Editor and OS clutter
+.vscode/
+.idea/
+*.tmp
+*.temp
+*.log
+Thumbs.db
+Desktop.ini
+.DS_Store
