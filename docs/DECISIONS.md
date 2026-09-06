@@ -14,8 +14,8 @@
 | D-010 | 2026-09-06 | Separar el reloj de la basura: `E` lo guarda y el clic izquierdo lo destruye con una penalización de 5 monedas | Hace visible la decisión, enseña destinos distintos y mantiene posible terminar aunque el jugador se equivoque | Candidata de FASE 3, pendiente de prueba manual |
 | D-011 | 2026-09-06 | Costes provisionales: 10 monedas para `Manos ágiles I` y 20 para `Bolsa reforzada I`; la salida exige 95 % y ambas | La economía normal entrega al menos 37 monedas, o 32 tras destruir el reloj, evitando un bloqueo | Candidata de FASE 3, pendiente de prueba manual |
 | D-012 | 2026-09-06 | El autoguardado de la vertical slice conserva monedas, mejoras, resultado del reloj y sala completada | Cumple la fase sin anticipar el sistema completo y migrable previsto para FASE 10 | Candidata de FASE 3, pendiente de prueba manual |
-| D-013 | 2026-09-06 | Cada basura tiene una esfera invisible de apuntado, proporcional y con radio mínimo accesible; sigue siendo obligatorio pulsar `E` | Facilita seleccionar objetos pequeños sin convertir la recogida en automática; corrige una primera interpretación incorrecta del requisito | Aclarada por el usuario durante FASE 3 |
-| D-014 | 2026-09-06 | La recogida base tarda 1,00 s y `Manos ágiles I` la reduce a 0,18 s | La diferencia anterior de 0,45 s a 0,15 s apenas se percibía | Solicitada por el usuario durante FASE 3 |
+| D-013 | 2026-09-06 | Cada basura tiene una esfera invisible de apuntado de aproximadamente 0,24–0,30 m; sigue siendo obligatorio pulsar `E` | Facilita seleccionar objetos pequeños sin que el blanco resulte excesivo ni la recogida sea automática | Ajustada por el usuario durante FASE 3 |
+| D-014 | 2026-09-06 | El primer objeto se recoge al instante; existe 1,00 s de espera antes del siguiente y `Manos ágiles I` la reduce a 0,35 s | Representa el intervalo entre animaciones futuras y hace perceptible la mejora sin retrasar cada objeto individual | Ajustada por el usuario durante FASE 3 |
 
 ## Política de originales pesados
 

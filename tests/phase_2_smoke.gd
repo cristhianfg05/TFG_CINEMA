@@ -55,10 +55,15 @@ func _run() -> void:
 			String(initial_item.get_interaction_prompt()).begins_with("E — Recoger"),
 			"Valid trash does not expose the pickup prompt"
 		)
-		_expect(
-			initial_item.get_node_or_null("InteractionArea/FocusRadius") is CollisionShape3D,
-			"Trash item has no enlarged aiming radius"
-		)
+		var focus_collision := initial_item.get_node_or_null(
+			"InteractionArea/FocusRadius"
+		) as CollisionShape3D
+		_expect(focus_collision != null, "Trash item has no enlarged aiming radius")
+		if focus_collision:
+			var focus_sphere := focus_collision.shape as SphereShape3D
+			_expect(focus_sphere != null, "Trash aiming target is not spherical")
+			if focus_sphere:
+				_expect(focus_sphere.radius <= 0.31, "Trash aiming sphere is still too large")
 
 		var collected_before_full := 0
 		var rejected_item: Node = null

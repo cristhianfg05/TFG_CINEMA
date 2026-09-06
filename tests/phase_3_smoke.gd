@@ -43,7 +43,7 @@ func _run() -> void:
 	_expect(get_nodes_in_group("trash_item").size() == 20, "Lost watch must not count as trash")
 
 	if manager and player:
-		_expect(is_equal_approx(manager.pickup_duration, 1.0), "Base pickup is not deliberately slow")
+		_expect(is_equal_approx(manager.pickup_cooldown, 1.0), "Base pickup cooldown is incorrect")
 		var proximity_item = get_nodes_in_group("trash_item")[0]
 		var focus_area := proximity_item.get_node("InteractionArea") as Area3D
 		_expect(not focus_area.monitoring, "Aiming area must not collect trash by body overlap")
@@ -60,11 +60,23 @@ func _run() -> void:
 			"Walking over trash collected it without pressing E"
 		)
 		proximity_item.interact(player)
-		_expect(proximity_item.is_collection_pending(), "Pressing E did not start collection")
-		await create_timer(1.15).timeout
 		_expect(
 			manager.remaining_trash == remaining_before_interaction - 1,
-			"E interaction did not collect trash after its delay"
+			"First E interaction was not immediate"
+		)
+		await process_frame
+		var second_item = get_nodes_in_group("trash_item")[0]
+		var remaining_after_first: int = manager.remaining_trash
+		second_item.interact(player)
+		_expect(
+			manager.remaining_trash == remaining_after_first,
+			"A second item bypassed the base pickup cooldown"
+		)
+		await create_timer(1.05).timeout
+		second_item.interact(player)
+		_expect(
+			manager.remaining_trash == remaining_after_first - 1,
+			"A second item was not accepted after the cooldown"
 		)
 
 	if manager and lost_found:
@@ -112,7 +124,7 @@ func _run() -> void:
 		_expect(manager.coins >= 30, "Destroying the watch caused an economy softlock")
 		_expect(manager.try_purchase_next_upgrade(), "Quick Hands I could not be purchased")
 		_expect(manager.has_upgrade(&"quick_hands_1"), "Quick Hands I was not applied")
-		_expect(is_equal_approx(manager.pickup_duration, 0.18), "Quick Hands I has no gameplay effect")
+		_expect(is_equal_approx(manager.pickup_cooldown, 0.35), "Quick Hands I has no gameplay effect")
 		_expect(manager.try_purchase_next_upgrade(), "Reinforced Bag I could not be purchased")
 		_expect(manager.has_upgrade(&"reinforced_bag_1"), "Reinforced Bag I was not applied")
 		_expect(is_equal_approx(manager.bag_capacity, 20.0), "Reinforced Bag I did not set capacity to 20")

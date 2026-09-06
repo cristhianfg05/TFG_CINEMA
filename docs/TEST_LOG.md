@@ -22,6 +22,6 @@
 | 2026-09-06 | FASE 3 candidata | Godot 4.7 headless | Autoguardado y restauración de mejoras, reloj y sala completada | Superada (`PHASE_3_SMOKE_OK`) | Formato provisional versión 1 |
 | 2026-09-06 | FASE 3 candidata | Forward+, RTX 2060, 1920×1080 | Render frontal y trasero de pantalla, espectadores y zona de servicios | Superada | Placeholders legibles; falta validar ritmo y comprensión con jugadores |
 | 2026-09-06 | FASE 3 candidata | Godot 4.7 headless | Esfera de apuntado ampliada y recogida exclusivamente mediante `E` | Superada (`PHASE_3_SMOKE_OK`) | Caminar sobre la basura no la recoge; el raycast resuelve la esfera hacia su objeto |
-| 2026-09-06 | FASE 3 candidata | Godot 4.7 headless | Contraste de tiempos de recogida base/mejorada | Superada (`PHASE_3_SMOKE_OK`) | 1,00 s base; 0,18 s con `Manos ágiles I` |
+| 2026-09-06 | FASE 3 candidata | Godot 4.7 headless | Cooldown entre recogidas base/mejorado | Superada (`PHASE_3_SMOKE_OK`) | Primera recogida inmediata; siguiente tras 1,00 s o 0,35 s con `Manos ágiles I` |
 
 Para cada fallo futuro anotar pasos de reproducción, resultado esperado, resultado obtenido y severidad.

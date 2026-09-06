@@ -6,7 +6,7 @@
 script = ExtResource("1")
 id = &"quick_hands_1"
 display_name = "Manos ágiles I"
-description = "Reduce el tiempo de recogida automática de 1,00 s a 0,18 s."
+description = "Reduce la espera entre dos recogidas de 1,00 s a 0,35 s."
 cost = 10
-effect = &"pickup_duration"
-value = 0.18
+effect = &"pickup_cooldown"
+value = 0.35

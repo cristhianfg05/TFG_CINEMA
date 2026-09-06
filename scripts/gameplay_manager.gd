@@ -38,18 +38,19 @@ const SPAWN_POSITIONS: Array[Vector3] = [
 
 @export var bag_capacity: float = 10.0
 @export var base_bag_capacity: float = 10.0
-@export var base_pickup_duration: float = 1.0
+@export var base_pickup_cooldown: float = 1.0
 
 var bag_volume: float = 0.0
 var coins: int = 0
 var remaining_trash: int = 0
 var total_trash: int = 0
-var pickup_duration: float = 1.0
+var pickup_cooldown: float = 1.0
 var held_lost_items: Array[String] = []
 var lost_item_state: String = "available"
 var purchased_upgrades: Dictionary = {}
 var room_completed: bool = false
 var _pending_reward: int = 0
+var _pickup_cooldown_remaining: float = 0.0
 
 @onready var trash_items: Node3D = $TrashItems
 @onready var lost_items: Node3D = $LostItems
@@ -73,12 +74,18 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_tree().reload_current_scene()
 
 
+func _physics_process(delta: float) -> void:
+	_pickup_cooldown_remaining = maxf(0.0, _pickup_cooldown_remaining - delta)
+
+
 func can_collect(definition: Resource) -> bool:
 	return definition != null and bag_volume + float(definition.volume) <= bag_capacity + 0.0001
 
 
-func try_collect(item: Node, _bypass_delay: bool = false) -> bool:
+func try_collect(item: Node, bypass_cooldown: bool = false) -> bool:
 	if item == null or not is_instance_valid(item) or item.definition == null:
+		return false
+	if not bypass_cooldown and not can_pick_up_now():
 		return false
 	var definition: Resource = item.definition
 	if not can_collect(definition):
@@ -86,6 +93,7 @@ func try_collect(item: Node, _bypass_delay: bool = false) -> bool:
 	bag_volume += float(definition.volume)
 	_pending_reward += int(definition.reward)
 	remaining_trash = maxi(0, remaining_trash - 1)
+	_pickup_cooldown_remaining = pickup_cooldown
 	item.collect()
 	if DisplayServer.get_name() != "headless":
 		pickup_audio.play()
@@ -94,21 +102,26 @@ func try_collect(item: Node, _bypass_delay: bool = false) -> bool:
 	return true
 
 
-func request_collect(item: Node) -> void:
+func request_collect(item: Node) -> bool:
 	if item == null or not is_instance_valid(item) or item.definition == null:
-		return
-	if item.has_method("is_collection_pending") and item.is_collection_pending():
-		return
+		return false
 	if not can_collect(item.definition):
 		notification_requested.emit("La bolsa está llena. Vacíala en el contenedor verde.")
-		return
-	if item.has_method("set_collection_pending"):
-		item.set_collection_pending(true, pickup_duration)
-	await get_tree().create_timer(pickup_duration, false).timeout
-	if not is_instance_valid(item) or item.is_queued_for_deletion():
-		return
-	if not try_collect(item, true) and item.has_method("set_collection_pending"):
-		item.set_collection_pending(false, 0.0)
+		return false
+	if not can_pick_up_now():
+		notification_requested.emit(
+			"Espera %.1f s para recoger otro objeto." % get_pickup_cooldown_remaining()
+		)
+		return false
+	return try_collect(item)
+
+
+func can_pick_up_now() -> bool:
+	return get_pickup_cooldown_remaining() <= 0.0
+
+
+func get_pickup_cooldown_remaining() -> float:
+	return _pickup_cooldown_remaining
 
 
 func empty_bag() -> bool:
@@ -241,7 +254,7 @@ func get_objective_text() -> String:
 
 func _apply_upgrades() -> void:
 	bag_capacity = 20.0 if has_upgrade(&"reinforced_bag_1") else base_bag_capacity
-	pickup_duration = 0.18 if has_upgrade(&"quick_hands_1") else base_pickup_duration
+	pickup_cooldown = 0.35 if has_upgrade(&"quick_hands_1") else base_pickup_cooldown
 
 
 func _evaluate_room_completion() -> void:

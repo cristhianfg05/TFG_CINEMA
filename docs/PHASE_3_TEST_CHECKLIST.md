@@ -16,7 +16,8 @@ Esta es la primera vertical slice. Debe jugarse desde cero sin la tecla de reini
 - [ ] Los dos espectadores hacen un idle muy suave y la pantalla muestra una imagen provisional.
 - [ ] El reloj dorado se distingue claramente de la basura y tiene brillo pulsante.
 - [ ] Al pulsar `E` sobre el reloj, no entra en la bolsa: queda en mano y puede entregarse en el cajón azul por 8 monedas.
-- [ ] La recogida base tarda aproximadamente un segundo y `Manos ágiles I`, por 10 monedas, la vuelve casi inmediata.
+- [ ] El primer objeto se recoge inmediatamente, pero sin mejora no se puede recoger un segundo hasta pasado aproximadamente un segundo.
+- [ ] `Manos ágiles I`, por 10 monedas, reduce la espera entre dos recogidas a unos 0,35 segundos.
 - [ ] `Bolsa reforzada I` cuesta 20 monedas y aumenta la capacidad de 10 a 20.
 - [ ] La puerta continúa cerrada si falta alcanzar 95 % de limpieza o comprar una mejora.
 - [ ] La puerta se abre al alcanzar al menos 95 % y comprar las dos mejoras.

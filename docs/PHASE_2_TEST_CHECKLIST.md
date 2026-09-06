@@ -10,7 +10,7 @@ Juega el bucle durante unos diez minutos. Los modelos son primitivas provisional
 
 ## Comprobaciones obligatorias
 
-- [ ] La esfera invisible facilita apuntar a la basura pequeña y aparece `E — Recoger`.
+- [ ] La esfera invisible reducida facilita apuntar a la basura pequeña sin seleccionar objetos lejanos por accidente.
 - [ ] Caminar sobre la basura no la recoge sin pulsar E.
 - [ ] Cada objeto desaparece una sola vez al recogerlo.
 - [ ] La bolsa aumenta según el volumen y nunca supera 10.
