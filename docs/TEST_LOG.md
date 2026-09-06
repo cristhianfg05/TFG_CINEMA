@@ -17,5 +17,9 @@
 | 2026-09-06 | FASE 2 candidata | Prueba manual del usuario | Movimiento de cámara con ratón tras añadir el HUD | Falló; corregido, pendiente de repetir | El HUD interceptaba los eventos de ratón; sus controles ahora usan `MOUSE_FILTER_IGNORE` |
 | 2026-09-06 | FASE 2 | Prueba manual del usuario | Bucle completo, cámara, capacidad, monedas y porcentaje | Aprobada por el usuario | Se solicitó bajar y suavizar el audio provisional antes de etiquetar |
 | 2026-09-06 | FASE 2 | Godot 4.7 | Ajuste de tonos provisionales | Corregido | Frecuencias, amplitud y volumen reducidos |
+| 2026-09-06 | FASE 3 candidata | Godot 4.7 headless | Separación basura/reloj, entrega, destrucción y penalización | Superada (`PHASE_3_SMOKE_OK`) | Destruir el reloj aún deja monedas suficientes para terminar |
+| 2026-09-06 | FASE 3 candidata | Godot 4.7 headless | Comprar ambas mejoras, aplicar efectos y abrir salida al cumplir requisitos | Superada (`PHASE_3_SMOKE_OK`) | Capacidad 20 y recuperación de recogida reducida verificadas |
+| 2026-09-06 | FASE 3 candidata | Godot 4.7 headless | Autoguardado y restauración de mejoras, reloj y sala completada | Superada (`PHASE_3_SMOKE_OK`) | Formato provisional versión 1 |
+| 2026-09-06 | FASE 3 candidata | Forward+, RTX 2060, 1920×1080 | Render frontal y trasero de pantalla, espectadores y zona de servicios | Superada | Placeholders legibles; falta validar ritmo y comprensión con jugadores |
 
 Para cada fallo futuro anotar pasos de reproducción, resultado esperado, resultado obtenido y severidad.

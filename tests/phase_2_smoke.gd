@@ -55,7 +55,7 @@ func _run() -> void:
 		var collected_before_full := 0
 		var rejected_item: Node = null
 		for item in get_nodes_in_group("trash_item"):
-			if manager.try_collect(item):
+			if manager.try_collect(item, true):
 				collected_before_full += 1
 			elif rejected_item == null:
 				rejected_item = item
@@ -82,7 +82,7 @@ func _run() -> void:
 			var collected_this_pass := false
 			for item in get_nodes_in_group("trash_item"):
 				if is_instance_valid(item) and not item.is_queued_for_deletion():
-					if manager.try_collect(item):
+					if manager.try_collect(item, true):
 						collected_this_pass = true
 			await process_frame
 			if manager.remaining_trash > 0:

@@ -1,10 +1,16 @@
-[gd_scene load_steps=8 format=3]
+[gd_scene load_steps=14 format=3]
 
 [ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="1_player"]
 [ext_resource type="PackedScene" path="res://scenes/rooms/room_01_blockout.tscn" id="2_room"]
 [ext_resource type="PackedScene" path="res://scenes/gameplay/gameplay_manager.tscn" id="3_manager"]
 [ext_resource type="PackedScene" path="res://scenes/gameplay/trash_bin.tscn" id="4_bin"]
 [ext_resource type="PackedScene" path="res://scenes/ui/gameplay_hud.tscn" id="5_hud"]
+[ext_resource type="PackedScene" path="res://scenes/gameplay/lost_found_box.tscn" id="6_lost_found"]
+[ext_resource type="PackedScene" path="res://scenes/characters/manager_placeholder.tscn" id="7_manager_npc"]
+[ext_resource type="PackedScene" path="res://scenes/gameplay/exit_door.tscn" id="8_exit"]
+[ext_resource type="PackedScene" path="res://scenes/characters/spectator_placeholder.tscn" id="9_spectator"]
+[ext_resource type="PackedScene" path="res://scenes/gameplay/screen_content.tscn" id="10_screen"]
+[ext_resource type="PackedScene" path="res://scenes/ui/pause_menu.tscn" id="11_pause"]
 
 [sub_resource type="Environment" id="Environment_main"]
 background_mode = 1
@@ -51,4 +57,28 @@ position = Vector3(0, 0.1, 11.5)
 [node name="TrashBin" parent="." instance=ExtResource("4_bin")]
 position = Vector3(-8.5, 0, 12.5)
 
+[node name="LostFoundBox" parent="." instance=ExtResource("6_lost_found")]
+position = Vector3(-5.4, 0, 13.3)
+
+[node name="ManagerPlaceholder" parent="." instance=ExtResource("7_manager_npc")]
+position = Vector3(3.8, 0, 13.3)
+
+[node name="ExitDoor" parent="." instance=ExtResource("8_exit")]
+position = Vector3(7.5, 0, 14.92)
+
+[node name="SpectatorLeft" parent="." instance=ExtResource("9_spectator")]
+position = Vector3(-4, 0, 0.2)
+shirt_color = Color(0.42, 0.28, 0.56, 1)
+phase_offset = 0.5
+
+[node name="SpectatorRight" parent="." instance=ExtResource("9_spectator")]
+position = Vector3(4, 0, 2.6)
+shirt_color = Color(0.22, 0.46, 0.48, 1)
+phase_offset = 2.4
+
+[node name="ScreenContent" parent="." instance=ExtResource("10_screen")]
+position = Vector3(0, 3.25, -14.65)
+
 [node name="GameplayHUD" parent="." instance=ExtResource("5_hud")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("11_pause")]

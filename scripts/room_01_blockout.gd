@@ -47,7 +47,6 @@ func _build_screen_and_door() -> void:
 	_add_box("ScreenLeftTrim", Vector3(-6.15, 3.25, -14.72), Vector3(0.12, 4.6, 0.18), "trim")
 	_add_box("ScreenRightTrim", Vector3(6.15, 3.25, -14.72), Vector3(0.12, 4.6, 0.18), "trim")
 
-	_add_box("Door", Vector3(7.5, 1.05, 14.92), Vector3(1.75, 2.1, 0.16), "door")
 	_add_box("DoorLeftTrim", Vector3(6.52, 1.15, 14.82), Vector3(0.18, 2.3, 0.22), "trim")
 	_add_box("DoorRightTrim", Vector3(8.48, 1.15, 14.82), Vector3(0.18, 2.3, 0.22), "trim")
 	_add_box("DoorTopTrim", Vector3(7.5, 2.3, 14.82), Vector3(2.15, 0.18, 0.22), "trim")

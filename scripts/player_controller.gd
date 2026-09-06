@@ -126,6 +126,11 @@ func _update_interaction() -> void:
 		prompt = _focused_interactable.get_interaction_prompt()
 		if Input.is_action_just_pressed("interact"):
 			_focused_interactable.interact(self)
+		elif (
+			Input.is_action_just_pressed("primary_action")
+			and _focused_interactable.has_method("primary_interact")
+		):
+			_focused_interactable.primary_interact(self)
 	interaction_prompt_changed.emit(prompt)
 
 

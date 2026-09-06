@@ -11,6 +11,9 @@
 | D-007 | 2026-09-06 | Controlador provisional de 1,8 m, cámara a 1,65 m, 4,5 m/s al caminar y 7 m/s al correr | Valores iniciales coherentes con primera persona | Aceptada por el usuario tras probar FASE 1 |
 | D-008 | 2026-09-06 | Bolsa basada en volumen con capacidad inicial 10; la recompensa queda pendiente hasta vaciar | Evita superar capacidad y duplicar monedas mediante descargas repetidas | Aceptada por el usuario tras probar FASE 2 |
 | D-009 | 2026-09-06 | Atenuar los tonos provisionales, bajar sus frecuencias y reducir su amplitud | La prueba manual detectó que el audio inicial era demasiado alto y estridente | Aceptada por el usuario |
+| D-010 | 2026-09-06 | Separar el reloj de la basura: `E` lo guarda y el clic izquierdo lo destruye con una penalización de 5 monedas | Hace visible la decisión, enseña destinos distintos y mantiene posible terminar aunque el jugador se equivoque | Candidata de FASE 3, pendiente de prueba manual |
+| D-011 | 2026-09-06 | Costes provisionales: 10 monedas para `Manos ágiles I` y 20 para `Bolsa reforzada I`; la salida exige 95 % y ambas | La economía normal entrega al menos 37 monedas, o 32 tras destruir el reloj, evitando un bloqueo | Candidata de FASE 3, pendiente de prueba manual |
+| D-012 | 2026-09-06 | El autoguardado de la vertical slice conserva monedas, mejoras, resultado del reloj y sala completada | Cumple la fase sin anticipar el sistema completo y migrable previsto para FASE 10 | Candidata de FASE 3, pendiente de prueba manual |
 
 ## Política de originales pesados
 
