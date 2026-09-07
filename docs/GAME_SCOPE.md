@@ -36,6 +36,7 @@ El hardware mínimo es una hipótesis de trabajo, no una promesa. Se validará m
 | Correr | Mayús izquierda |
 | Agacharse | Ctrl izquierda |
 | Interactuar | E |
+| Recoger basura | Botón derecho del ratón |
 | Herramienta principal | Botón izquierdo del ratón |
 | Pausa | Escape |
 

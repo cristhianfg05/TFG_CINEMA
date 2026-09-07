@@ -9,6 +9,7 @@ const REQUIRED_ACTIONS := [
 	"sprint",
 	"crouch",
 	"interact",
+	"collect_item",
 	"primary_action",
 	"pause",
 ]

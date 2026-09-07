@@ -16,6 +16,7 @@
 | D-012 | 2026-09-06 | El autoguardado de la vertical slice conserva monedas, mejoras, resultado del reloj y sala completada | Cumple la fase sin anticipar el sistema completo y migrable previsto para FASE 10 | Candidata de FASE 3, pendiente de prueba manual |
 | D-013 | 2026-09-06 | Cada basura tiene una esfera invisible de apuntado de aproximadamente 0,24–0,30 m; sigue siendo obligatorio pulsar `E` | Facilita seleccionar objetos pequeños sin que el blanco resulte excesivo ni la recogida sea automática | Ajustada por el usuario durante FASE 3 |
 | D-014 | 2026-09-06 | El primer objeto se recoge al instante; existe 1,00 s de espera antes del siguiente y `Manos ágiles I` la reduce a 0,35 s | Representa el intervalo entre animaciones futuras y hace perceptible la mejora sin retrasar cada objeto individual | Ajustada por el usuario durante FASE 3 |
+| D-015 | 2026-09-07 | La basura normal se recoge con clic derecho; `E` queda para estaciones y para guardar el reloj | Separa la acción repetitiva de limpieza de las interacciones contextuales y futuras herramientas | Aceptada por el usuario para cerrar FASE 3 |
 
 ## Política de originales pesados
 

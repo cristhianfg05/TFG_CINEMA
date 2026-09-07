@@ -26,11 +26,11 @@ func get_interaction_prompt() -> String:
 	if manager.can_collect(definition):
 		if not manager.can_pick_up_now():
 			return "Manos ocupadas — espera %.1f s" % manager.get_pickup_cooldown_remaining()
-		return "E — Recoger: %s" % definition.display_name
+		return "Clic derecho — Recoger: %s" % definition.display_name
 	return "Bolsa llena — vacíala en el contenedor"
 
 
-func interact(_player: Node) -> void:
+func collect_interact(_player: Node) -> void:
 	var manager = get_tree().get_first_node_in_group("gameplay_manager")
 	if manager:
 		manager.request_collect(self)

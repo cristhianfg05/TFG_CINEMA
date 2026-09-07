@@ -9,6 +9,12 @@ func _initialize() -> void:
 
 func _run() -> void:
 	_expect(InputMap.has_action("debug_reset"), "Missing debug reset input")
+	_expect(InputMap.has_action("collect_item"), "Missing right-click collection input")
+	var has_right_click := false
+	for input_event in InputMap.action_get_events("collect_item"):
+		if input_event is InputEventMouseButton and input_event.button_index == MOUSE_BUTTON_RIGHT:
+			has_right_click = true
+	_expect(has_right_click, "Collection input is not bound to the right mouse button")
 	var scene := load("res://scenes/main/main.tscn") as PackedScene
 	_expect(scene != null, "Main scene failed to load")
 	if scene == null:
@@ -52,7 +58,7 @@ func _run() -> void:
 		_expect(manager.empty_audio.stream is AudioStreamWAV, "Emptying sound was not generated")
 		var initial_item = get_nodes_in_group("trash_item")[0]
 		_expect(
-			String(initial_item.get_interaction_prompt()).begins_with("E — Recoger"),
+			String(initial_item.get_interaction_prompt()).begins_with("Clic derecho — Recoger"),
 			"Valid trash does not expose the pickup prompt"
 		)
 		var focus_collision := initial_item.get_node_or_null(

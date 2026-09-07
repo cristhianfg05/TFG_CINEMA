@@ -4,13 +4,13 @@ Juega el bucle durante unos diez minutos. Los modelos son primitivas provisional
 
 ## Controles nuevos
 
-- Recoger basura: apuntar cerca del objeto hasta ver el mensaje y pulsar E.
+- Recoger basura: apuntar cerca del objeto hasta ver el mensaje y usar clic derecho.
 - Vaciar: E mientras aparece el mensaje contextual del contenedor.
 - Reiniciar la prueba: R. Esta tecla es solo de depuración.
 
 ## Comprobaciones obligatorias
 
-- [ ] La esfera invisible reducida facilita apuntar a la basura pequeña sin seleccionar objetos lejanos por accidente.
+- [ ] La esfera invisible reducida facilita apuntar a la basura pequeña y aparece `Clic derecho — Recoger`.
 - [ ] Caminar sobre la basura no la recoge sin pulsar E.
 - [ ] Cada objeto desaparece una sola vez al recogerlo.
 - [ ] La bolsa aumenta según el volumen y nunca supera 10.

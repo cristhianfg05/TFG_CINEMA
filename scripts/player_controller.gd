@@ -117,7 +117,10 @@ func get_interaction_target() -> Object:
 func _resolve_interactable(candidate: Node) -> Node:
 	var current := candidate
 	while current and current != self:
-		if current.has_method("get_interaction_prompt") and current.has_method("interact"):
+		if (
+			current.has_method("get_interaction_prompt")
+			and (current.has_method("interact") or current.has_method("collect_interact"))
+		):
 			return current
 		current = current.get_parent()
 	return null
@@ -133,7 +136,15 @@ func _update_interaction() -> void:
 	var prompt := ""
 	if _focused_interactable and is_instance_valid(_focused_interactable):
 		prompt = _focused_interactable.get_interaction_prompt()
-		if Input.is_action_just_pressed("interact"):
+		if (
+			Input.is_action_just_pressed("collect_item")
+			and _focused_interactable.has_method("collect_interact")
+		):
+			_focused_interactable.collect_interact(self)
+		elif (
+			Input.is_action_just_pressed("interact")
+			and _focused_interactable.has_method("interact")
+		):
 			_focused_interactable.interact(self)
 		elif (
 			Input.is_action_just_pressed("primary_action")

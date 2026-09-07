@@ -1,6 +1,6 @@
 # Cinema Cleaner — guía de playtest FASE 3
 
-Versión: `0.3.0-playtest.1`.
+Versión: `0.3.0-playtest.2`.
 
 ## Cómo abrirlo
 
@@ -16,7 +16,8 @@ Versión: `0.3.0-playtest.1`.
 - Mayús: correr.
 - Ctrl: agacharse.
 - Espacio: saltar.
-- E: recoger o interactuar.
+- Clic derecho: recoger basura.
+- E: interactuar, vaciar, comprar y guardar el reloj.
 - Clic izquierdo: tirar el reloj enfocado, con penalización.
 - Escape: pausa.
 

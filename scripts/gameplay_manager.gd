@@ -243,7 +243,7 @@ func get_objective_text() -> String:
 	if room_completed:
 		return "Sala completada — atraviesa la puerta"
 	if get_clean_percent() == 0:
-		return "Apunta cerca de la basura y pulsa E para recogerla"
+		return "Apunta cerca de la basura y usa clic derecho para recogerla"
 	if get_clean_percent() < 95:
 		return "Objetivo: limpia al menos el 95 %"
 	var next_upgrade := get_next_upgrade()

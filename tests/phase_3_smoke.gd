@@ -51,6 +51,8 @@ func _run() -> void:
 			player._resolve_interactable(focus_area) == proximity_item,
 			"Aiming at the invisible sphere did not resolve its trash item"
 		)
+		_expect(not proximity_item.has_method("interact"), "E still collects normal trash")
+		_expect(proximity_item.has_method("collect_interact"), "Trash has no dedicated collection action")
 		var remaining_before_interaction: int = manager.remaining_trash
 		player.global_position = proximity_item.global_position
 		await physics_frame
@@ -59,21 +61,21 @@ func _run() -> void:
 			manager.remaining_trash == remaining_before_interaction,
 			"Walking over trash collected it without pressing E"
 		)
-		proximity_item.interact(player)
+		proximity_item.collect_interact(player)
 		_expect(
 			manager.remaining_trash == remaining_before_interaction - 1,
-			"First E interaction was not immediate"
+			"First right-click collection was not immediate"
 		)
 		await process_frame
 		var second_item = get_nodes_in_group("trash_item")[0]
 		var remaining_after_first: int = manager.remaining_trash
-		second_item.interact(player)
+		second_item.collect_interact(player)
 		_expect(
 			manager.remaining_trash == remaining_after_first,
 			"A second item bypassed the base pickup cooldown"
 		)
 		await create_timer(1.05).timeout
-		second_item.interact(player)
+		second_item.collect_interact(player)
 		_expect(
 			manager.remaining_trash == remaining_after_first - 1,
 			"A second item was not accepted after the cooldown"
