@@ -11,6 +11,12 @@ builds/*
 source_assets/local_originals/*
 !source_assets/local_originals/README.md
 
+# Local staging files; production copies live outside this folder
+assets/characters/placeholders/
+
+# Godot sidecars are not useful for authoring-only source assets
+source_assets/**/*.import
+
 # Blender temporary/backup files
 *.blend1
 *.blend2

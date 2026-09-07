@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/characters/npc_manager.tscn" id="1_manager"]
+[ext_resource type="PackedScene" path="res://scenes/characters/npc_man_fat.tscn" id="2_fat"]
+[ext_resource type="PackedScene" path="res://scenes/characters/npc_popcorn.tscn" id="3_popcorn"]
+[ext_resource type="PackedScene" path="res://scenes/characters/npc_young.tscn" id="4_young"]
+
+[sub_resource type="Environment" id="ShowcaseEnvironment"]
+background_mode = 1
+background_color = Color(0.035, 0.035, 0.045, 1)
+ambient_light_source = 3
+ambient_light_color = Color(0.45, 0.5, 0.62, 1)
+ambient_light_energy = 1.15
+
+[sub_resource type="StandardMaterial3D" id="FloorMaterial"]
+albedo_color = Color(0.11, 0.12, 0.15, 1)
+roughness = 0.9
+
+[sub_resource type="BoxMesh" id="FloorMesh"]
+material = SubResource("FloorMaterial")
+size = Vector3(10, 0.1, 4)
+
+[sub_resource type="BoxShape3D" id="FloorShape"]
+size = Vector3(10, 0.1, 4)
+
+[node name="Phase4CharacterShowcase" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("ShowcaseEnvironment")
+
+[node name="KeyLight" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-45, -25, 0)
+light_color = Color(1, 0.84, 0.72, 1)
+light_energy = 1.5
+shadow_enabled = true
+
+[node name="FillLight" type="OmniLight3D" parent="."]
+position = Vector3(-3, 3.5, -3)
+light_color = Color(0.55, 0.68, 1, 1)
+light_energy = 6.0
+omni_range = 12.0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+position = Vector3(0, 1.2, -6)
+rotation_degrees = Vector3(0, 180, 0)
+current = true
+fov = 58.0
+
+[node name="Floor" type="StaticBody3D" parent="."]
+position = Vector3(0, -0.05, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("FloorMesh")
+
+[node name="Collision" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("FloorShape")
+
+[node name="Manager" parent="." instance=ExtResource("1_manager")]
+position = Vector3(-3.2, 0, 0)
+
+[node name="ManFat" parent="." instance=ExtResource("2_fat")]
+position = Vector3(-1.1, 0, 0)
+
+[node name="Popcorn" parent="." instance=ExtResource("3_popcorn")]
+position = Vector3(1.1, 0, 0)
+
+[node name="Young" parent="." instance=ExtResource("4_young")]
+position = Vector3(3.2, 0, 0)

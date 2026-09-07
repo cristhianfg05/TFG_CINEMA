@@ -1,6 +1,6 @@
 extends StaticBody3D
 
-@onready var desk: MeshInstance3D = $Desk
+@onready var desk: MeshInstance3D = get_node_or_null("Desk") as MeshInstance3D
 
 var _desk_material := StandardMaterial3D.new()
 var _highlight_material := StandardMaterial3D.new()
@@ -14,13 +14,19 @@ func _ready() -> void:
 	_highlight_material.emission_enabled = true
 	_highlight_material.emission = Color("6d4219")
 	_highlight_material.emission_energy_multiplier = 1.2
-	desk.material_override = _desk_material
-	$Body.material_override = _make_material(Color("456d78"))
-	$Head.material_override = _make_material(Color("b98563"))
+	if desk:
+		desk.material_override = _desk_material
+	var placeholder_body := get_node_or_null("Body") as MeshInstance3D
+	var placeholder_head := get_node_or_null("Head") as MeshInstance3D
+	if placeholder_body:
+		placeholder_body.material_override = _make_material(Color("456d78"))
+	if placeholder_head:
+		placeholder_head.material_override = _make_material(Color("b98563"))
 
 
 func set_focused(focused: bool) -> void:
-	desk.material_override = _highlight_material if focused else _desk_material
+	if desk:
+		desk.material_override = _highlight_material if focused else _desk_material
 
 
 func get_interaction_prompt() -> String:

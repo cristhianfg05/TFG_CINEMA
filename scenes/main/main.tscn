@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" path="res://scenes/gameplay/trash_bin.tscn" id="4_bin"]
 [ext_resource type="PackedScene" path="res://scenes/ui/gameplay_hud.tscn" id="5_hud"]
 [ext_resource type="PackedScene" path="res://scenes/gameplay/lost_found_box.tscn" id="6_lost_found"]
-[ext_resource type="PackedScene" path="res://scenes/characters/manager_placeholder.tscn" id="7_manager_npc"]
+[ext_resource type="PackedScene" path="res://scenes/characters/manager.tscn" id="7_manager_npc"]
 [ext_resource type="PackedScene" path="res://scenes/gameplay/exit_door.tscn" id="8_exit"]
 [ext_resource type="PackedScene" path="res://scenes/characters/spectator_placeholder.tscn" id="9_spectator"]
 [ext_resource type="PackedScene" path="res://scenes/gameplay/screen_content.tscn" id="10_screen"]
@@ -60,7 +60,7 @@ position = Vector3(-8.5, 0, 12.5)
 [node name="LostFoundBox" parent="." instance=ExtResource("6_lost_found")]
 position = Vector3(-5.4, 0, 13.3)
 
-[node name="ManagerPlaceholder" parent="." instance=ExtResource("7_manager_npc")]
+[node name="Manager" parent="." instance=ExtResource("7_manager_npc")]
 position = Vector3(3.8, 0, 13.3)
 
 [node name="ExitDoor" parent="." instance=ExtResource("8_exit")]

@@ -11,3 +11,5 @@ Proyecto de TFG: juego de limpieza en primera persona desarrollado con Godot 4 y
 5. Pulsa F5 para abrir el menú principal. `Nueva partida` borra el progreso anterior y `Continuar` carga el autoguardado.
 
 La fase activa y sus límites están documentados en `docs/GAME_SCOPE.md`. No se debe iniciar una fase posterior antes de cumplir el criterio de salida de la actual.
+
+Durante la FASE 4, la galería técnica de personajes puede abrirse desde `scenes/art/phase_4_character_showcase.tscn`. La partida normal ya usa el modelo importado del manager; los demás esperan a disponer de rig y animaciones compatibles.

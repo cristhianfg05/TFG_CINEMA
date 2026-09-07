@@ -27,5 +27,10 @@
 | 2026-09-07 | FASE 3 candidata | Godot 4.7 headless | Separar recogida con clic derecho e interacción con `E` | Superada (`PHASE_3_SMOKE_OK`) | El reloj y las estaciones conservan sus acciones deliberadas |
 | 2026-09-07 | FASE 3 | Windows x86_64 release | Exportar, ejecutar y verificar `0.3.0-playtest.2` | Superada; código de salida 0 | Los assets de entrada de FASE 4 quedaron excluidos; ZIP validado mediante SHA-256 |
 | 2026-09-07 | FASE 3 | Aprobación del usuario | Vertical slice y control definitivo de recogida | Aprobada | Clic derecho para basura; `E` para interacciones contextuales |
+| 2026-09-07 | FASE 4 candidata | Blender 5.2.1 LTS | Auditar, limpiar y exportar cuatro personajes | Superada | Todos quedan entre 14.969 y 14.975 triángulos, 1 material, escala aplicada y pies en el origen; rig pendiente |
+| 2026-09-07 | FASE 4 candidata | Godot 4.7 headless | Cargar cuatro GLB, contenedores, colisiones y manager funcional | Superada (`PHASE_4_SMOKE_OK`) | Los espectadores reales no entran todavía en la sala por carecer de rig |
+| 2026-09-07 | FASE 4 candidata | Godot 4.7 | Regenerar y reimportar el GLB del manager sin cambiar referencias | Superada | Escenas y script conservaron SHA-256; smoke posterior superado |
+| 2026-09-07 | FASE 4 candidata | Forward+, RTX 2060 | Renderizar la galería de cuatro NPC con texturas | Superada | 10 draw calls y 104.834 primitivas con sombras; FPS de ventana oculta no representativo |
+| 2026-09-07 | FASE 4 candidata | Godot 4.7 headless | Regresión de FASE 1, FASE 2 y FASE 3 | Superada | `PHASE_1_SMOKE_OK`, `PHASE_2_SMOKE_OK` y `PHASE_3_SMOKE_OK` |
 
 Para cada fallo futuro anotar pasos de reproducción, resultado esperado, resultado obtenido y severidad.
