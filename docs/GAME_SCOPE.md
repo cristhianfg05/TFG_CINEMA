@@ -52,5 +52,6 @@ El hardware mínimo es una hipótesis de trabajo, no una promesa. Se validará m
 - FASE 0 — Preparación y control del alcance: completada el 2026-09-06.
 - FASE 1 — Controlador y sala inicial en bloques: completada y aprobada el 2026-09-06.
 - FASE 2 — Núcleo de limpieza: completada y aprobada el 2026-09-06.
-- FASE 3 — Primera vertical slice: candidata implementada; pendiente de prueba manual con jugadores.
-- No autorizado todavía: arte definitivo ni contenido de FASE 4 o posteriores.
+- FASE 3 — Primera vertical slice: completada y aprobada el 2026-09-07.
+- FASE 4 — Pipeline artístico definitivo: siguiente fase autorizada; pendiente de iniciar el procesamiento de assets.
+- No autorizado todavía: contenido de FASE 5 o posteriores.

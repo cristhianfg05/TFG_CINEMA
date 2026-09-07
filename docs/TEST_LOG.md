@@ -25,5 +25,7 @@
 | 2026-09-06 | FASE 3 candidata | Godot 4.7 headless | Cooldown entre recogidas base/mejorado | Superada (`PHASE_3_SMOKE_OK`) | Primera recogida inmediata; siguiente tras 1,00 s o 0,35 s con `Manos ágiles I` |
 | 2026-09-06 | FASE 3 candidata | Windows x86_64 release | Exportar y ejecutar `0.3.0-playtest.1` fuera del editor | Superada; código de salida 0 | ZIP extraído y sus tres archivos verificados mediante SHA-256 |
 | 2026-09-07 | FASE 3 candidata | Godot 4.7 headless | Separar recogida con clic derecho e interacción con `E` | Superada (`PHASE_3_SMOKE_OK`) | El reloj y las estaciones conservan sus acciones deliberadas |
+| 2026-09-07 | FASE 3 | Windows x86_64 release | Exportar, ejecutar y verificar `0.3.0-playtest.2` | Superada; código de salida 0 | Los assets de entrada de FASE 4 quedaron excluidos; ZIP validado mediante SHA-256 |
+| 2026-09-07 | FASE 3 | Aprobación del usuario | Vertical slice y control definitivo de recogida | Aprobada | Clic derecho para basura; `E` para interacciones contextuales |
 
 Para cada fallo futuro anotar pasos de reproducción, resultado esperado, resultado obtenido y severidad.
