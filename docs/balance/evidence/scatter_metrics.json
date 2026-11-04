@@ -1,0 +1,92 @@
+[
+	{
+		"metrics": {
+			"active_bodies": 0,
+			"draw_calls": 382.0,
+			"entries": 6270,
+			"fps": 58.0,
+			"median_frame_ms": 16.678,
+			"nodes": 10616.0,
+			"p95_frame_ms": 19.322,
+			"proxies": 166,
+			"trash_registry_cpu_ms": 0.311225806451613,
+			"wall_fps": 59.3028358616109
+		},
+		"view": "room1"
+	},
+	{
+		"metrics": {
+			"active_bodies": 0,
+			"draw_calls": 195.0,
+			"entries": 6270,
+			"fps": 60.0,
+			"median_frame_ms": 16.687,
+			"nodes": 10730.0,
+			"p95_frame_ms": 19.738,
+			"proxies": 223,
+			"trash_registry_cpu_ms": 0.408433333333333,
+			"wall_fps": 60.5468185001477
+		},
+		"view": "room2"
+	},
+	{
+		"metrics": {
+			"active_bodies": 0,
+			"draw_calls": 277.0,
+			"entries": 6270,
+			"fps": 60.0,
+			"median_frame_ms": 16.663,
+			"nodes": 10660.0,
+			"p95_frame_ms": 19.358,
+			"proxies": 188,
+			"trash_registry_cpu_ms": 0.330455555555556,
+			"wall_fps": 60.646818535285
+		},
+		"view": "room3"
+	},
+	{
+		"metrics": {
+			"active_bodies": 0,
+			"draw_calls": 411.0,
+			"entries": 6270,
+			"fps": 60.0,
+			"median_frame_ms": 16.714,
+			"nodes": 10772.0,
+			"p95_frame_ms": 21.03,
+			"proxies": 244,
+			"trash_registry_cpu_ms": 0.546533333333333,
+			"wall_fps": 60.6489845675289
+		},
+		"view": "room4"
+	},
+	{
+		"metrics": {
+			"active_bodies": 0,
+			"draw_calls": 465.0,
+			"entries": 6270,
+			"fps": 60.0,
+			"median_frame_ms": 16.727,
+			"nodes": 10796.0,
+			"p95_frame_ms": 22.747,
+			"proxies": 256,
+			"trash_registry_cpu_ms": 0.820955555555556,
+			"wall_fps": 60.6735164819608
+		},
+		"view": "lobby"
+	},
+	{
+		"metrics": {
+			"active_bodies": 0,
+			"draw_calls": 326.0,
+			"entries": 6270,
+			"fps": 60.0,
+			"median_frame_ms": 16.654,
+			"nodes": 10392.0,
+			"p95_frame_ms": 19.459,
+			"proxies": 54,
+			"trash_registry_cpu_ms": 0.321888888888889,
+			"wall_fps": 60.6561785394397
+		},
+		"view": "office"
+	}
+]

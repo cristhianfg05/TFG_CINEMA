@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=5 format=3]
 
-[ext_resource type="PackedScene" path="res://assets/characters/production/npc_manager.glb" id="1_model"]
+[ext_resource type="PackedScene" path="res://assets/characters/production/npc_manager_rigged.glb" id="1_model"]
+[ext_resource type="Script" path="res://scripts/manager_idle.gd" id="2_idle"]
+[ext_resource type="BoneMap" path="res://resources/characters/manager_bone_map.tres" id="3_bone_map"]
 
 [sub_resource type="CapsuleShape3D" id="ManagerCollision"]
 radius = 0.32
@@ -9,6 +11,8 @@ height = 1.8
 [node name="NpcManager" type="StaticBody3D" groups=["phase_4_character"]]
 collision_layer = 1
 collision_mask = 1
+script = ExtResource("2_idle")
+humanoid_bone_map = ExtResource("3_bone_map")
 
 [node name="Model" parent="." instance=ExtResource("1_model")]
 rotation_degrees = Vector3(0, 180, 0)

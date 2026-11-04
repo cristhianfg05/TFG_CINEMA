@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/sealed_bag.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://assets/models/source/tools/BolsaBasura.glb" id="2_model"]
+
+[sub_resource type="SphereShape3D" id="SphereShape_bag"]
+radius = 0.57
+
+[node name="SealedBag" type="RigidBody3D"]
+physics_interpolation_mode = 2
+collision_layer = 2
+collision_mask = 1
+mass = 1.2
+linear_damp = 1.4
+angular_damp = 1.8
+continuous_cd = true
+script = ExtResource("1_script")
+
+[node name="Model" parent="." instance=ExtResource("2_model")]
+scale = Vector3(6.9, 6.9, 6.9)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+position = Vector3(0, 0.57, 0)
+shape = SubResource("SphereShape_bag")

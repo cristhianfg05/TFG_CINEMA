@@ -1,0 +1,967 @@
+{
+  "built_objects": 6270,
+  "reserved_objects": 1730,
+  "built_base_cents": 6859,
+  "reserved_base_cents": 1890,
+  "all_purchase_cost_cents": 26570,
+  "all_purchases": 53,
+  "fixed_objective_rewards_cents": 1200,
+  "ordinary": {
+    "gross_cents": 21377,
+    "spent_cents": 13170,
+    "cash_cents": 8207,
+    "purchase_count": 44,
+    "ledger": [
+      [
+        "Sala 1",
+        650,
+        "7,50",
+        "3,30",
+        "4,20",
+        1,
+        7
+      ],
+      [
+        "Ala derecha",
+        930,
+        "10,55",
+        "3,30",
+        "7,25",
+        1,
+        7
+      ],
+      [
+        "Despacho",
+        970,
+        "10,99",
+        "3,30",
+        "7,69",
+        1,
+        7
+      ],
+      [
+        "Sala 2",
+        2070,
+        "28,88",
+        "28,65",
+        "0,23",
+        2,
+        16
+      ],
+      [
+        "Sala 3 Acción",
+        3120,
+        "52,98",
+        "48,50",
+        "4,48",
+        2,
+        26
+      ],
+      [
+        "Entrada y vestíbulo",
+        4620,
+        "101,72",
+        "92,75",
+        "8,97",
+        3,
+        37
+      ],
+      [
+        "Ala izquierda",
+        4820,
+        "108,17",
+        "92,75",
+        "15,42",
+        3,
+        37
+      ],
+      [
+        "Sala 4 Miedo",
+        6270,
+        "157,07",
+        "131,70",
+        "25,37",
+        3,
+        44
+      ],
+      [
+        "Sala final (reserva)",
+        8000,
+        "213,77",
+        "131,70",
+        "82,07",
+        3,
+        44
+      ]
+    ],
+    "purchases": [
+      [
+        24,
+        "Sala 1",
+        "reinforced_bag",
+        1,
+        "0,25",
+        "0,00"
+      ],
+      [
+        42,
+        "Sala 1",
+        "quick_hands",
+        1,
+        "0,20",
+        "0,00"
+      ],
+      [
+        98,
+        "Sala 1",
+        "reinforced_bag",
+        2,
+        "0,60",
+        "0,00"
+      ],
+      [
+        186,
+        "Sala 1",
+        "multi_pickup",
+        1,
+        "0,95",
+        "0,00"
+      ],
+      [
+        219,
+        "Sala 1",
+        "manual_reach",
+        1,
+        "0,35",
+        "0,00"
+      ],
+      [
+        265,
+        "Sala 1",
+        "sprint",
+        1,
+        "0,50",
+        "0,00"
+      ],
+      [
+        307,
+        "Sala 1",
+        "quick_hands",
+        2,
+        "0,45",
+        "0,00"
+      ],
+      [
+        1362,
+        "Sala 2",
+        "vacuum",
+        1,
+        "12,00",
+        "0,00"
+      ],
+      [
+        1635,
+        "Sala 2",
+        "recycle_value",
+        1,
+        "3,00",
+        "0,00"
+      ],
+      [
+        1703,
+        "Sala 2",
+        "broom",
+        1,
+        "1,50",
+        "0,00"
+      ],
+      [
+        1760,
+        "Sala 2",
+        "reinforced_bag",
+        3,
+        "1,25",
+        "0,01"
+      ],
+      [
+        1817,
+        "Sala 2",
+        "broom_speed",
+        1,
+        "1,25",
+        "0,00"
+      ],
+      [
+        1885,
+        "Sala 2",
+        "broom_width",
+        1,
+        "1,50",
+        "0,00"
+      ],
+      [
+        1988,
+        "Sala 2",
+        "vacuum_reach",
+        1,
+        "2,25",
+        "0,01"
+      ],
+      [
+        2067,
+        "Sala 2",
+        "vacuum_battery",
+        1,
+        "1,75",
+        "0,00"
+      ],
+      [
+        2070,
+        "Sala 2",
+        "quick_hands",
+        3,
+        "0,85",
+        "0,23"
+      ],
+      [
+        2101,
+        "Sala 3 Acción",
+        "manual_reach",
+        2,
+        "0,90",
+        "0,01"
+      ],
+      [
+        2135,
+        "Sala 3 Acción",
+        "sealed_bags",
+        1,
+        "0,75",
+        "0,00"
+      ],
+      [
+        2238,
+        "Sala 3 Acción",
+        "reinforced_bag",
+        4,
+        "2,25",
+        "0,01"
+      ],
+      [
+        2338,
+        "Sala 3 Acción",
+        "multi_pickup",
+        2,
+        "2,20",
+        "0,01"
+      ],
+      [
+        2497,
+        "Sala 3 Acción",
+        "vacuum_battery",
+        2,
+        "3,50",
+        "0,01"
+      ],
+      [
+        2565,
+        "Sala 3 Acción",
+        "vacuum_recharge",
+        1,
+        "1,50",
+        "0,01"
+      ],
+      [
+        2701,
+        "Sala 3 Acción",
+        "broom_speed",
+        2,
+        "3,00",
+        "0,01"
+      ],
+      [
+        2860,
+        "Sala 3 Acción",
+        "broom_width",
+        2,
+        "3,50",
+        "0,01"
+      ],
+      [
+        2917,
+        "Sala 3 Acción",
+        "sprint",
+        2,
+        "1,25",
+        "0,00"
+      ],
+      [
+        2962,
+        "Sala 3 Acción",
+        "all_seeing_eye",
+        1,
+        "1,00",
+        "0,00"
+      ],
+      [
+        3280,
+        "Entrada y vestíbulo",
+        "recycle_value",
+        2,
+        "8,00",
+        "0,00"
+      ],
+      [
+        3523,
+        "Entrada y vestíbulo",
+        "reinforced_bag",
+        5,
+        "8,00",
+        "0,01"
+      ],
+      [
+        3660,
+        "Entrada y vestíbulo",
+        "vacuum_reach",
+        2,
+        "4,50",
+        "0,04"
+      ],
+      [
+        3857,
+        "Entrada y vestíbulo",
+        "vacuum_battery",
+        3,
+        "6,50",
+        "0,02"
+      ],
+      [
+        3948,
+        "Entrada y vestíbulo",
+        "vacuum_recharge",
+        2,
+        "3,00",
+        "0,02"
+      ],
+      [
+        4076,
+        "Entrada y vestíbulo",
+        "multi_pickup",
+        3,
+        "4,25",
+        "0,00"
+      ],
+      [
+        4119,
+        "Entrada y vestíbulo",
+        "quick_hands",
+        4,
+        "1,40",
+        "0,01"
+      ],
+      [
+        4173,
+        "Entrada y vestíbulo",
+        "manual_reach",
+        3,
+        "1,80",
+        "0,01"
+      ],
+      [
+        4249,
+        "Entrada y vestíbulo",
+        "all_seeing_eye",
+        2,
+        "2,50",
+        "0,00"
+      ],
+      [
+        4303,
+        "Entrada y vestíbulo",
+        "sealed_bags",
+        2,
+        "1,80",
+        "0,00"
+      ],
+      [
+        4380,
+        "Entrada y vestíbulo",
+        "sprint",
+        3,
+        "2,50",
+        "0,05"
+      ],
+      [
+        4820,
+        "Sala 4 Miedo",
+        "multi_pickup",
+        4,
+        "12,00",
+        "3,42"
+      ],
+      [
+        4820,
+        "Sala 4 Miedo",
+        "quick_hands",
+        5,
+        "2,20",
+        "1,22"
+      ],
+      [
+        4876,
+        "Sala 4 Miedo",
+        "manual_reach",
+        4,
+        "3,00",
+        "0,05"
+      ],
+      [
+        5135,
+        "Sala 4 Miedo",
+        "vacuum_reach",
+        3,
+        "8,50",
+        "0,01"
+      ],
+      [
+        5303,
+        "Sala 4 Miedo",
+        "vacuum_recharge",
+        3,
+        "5,50",
+        "0,00"
+      ],
+      [
+        5434,
+        "Sala 4 Miedo",
+        "sprint",
+        4,
+        "4,25",
+        "0,04"
+      ],
+      [
+        5541,
+        "Sala 4 Miedo",
+        "sealed_bags",
+        3,
+        "3,50",
+        "0,02"
+      ]
+    ]
+  },
+  "efficient": {
+    "gross_cents": 36051,
+    "spent_cents": 26570,
+    "cash_cents": 9481,
+    "purchase_count": 53,
+    "ledger": [
+      [
+        "Sala 1",
+        650,
+        "9,50",
+        "6,30",
+        "3,20",
+        2,
+        8
+      ],
+      [
+        "Ala derecha",
+        930,
+        "15,60",
+        "6,30",
+        "9,30",
+        2,
+        8
+      ],
+      [
+        "Despacho",
+        970,
+        "16,48",
+        "11,80",
+        "4,68",
+        2,
+        12
+      ],
+      [
+        "Sala 2",
+        2070,
+        "46,12",
+        "38,30",
+        "7,82",
+        3,
+        19
+      ],
+      [
+        "Sala 3 Acción",
+        3120,
+        "91,26",
+        "70,50",
+        "20,76",
+        4,
+        28
+      ],
+      [
+        "Entrada y vestíbulo",
+        4620,
+        "174,76",
+        "124,75",
+        "50,01",
+        5,
+        39
+      ],
+      [
+        "Ala izquierda",
+        4820,
+        "185,51",
+        "124,75",
+        "60,76",
+        5,
+        39
+      ],
+      [
+        "Sala 4 Miedo",
+        6270,
+        "266,01",
+        "184,70",
+        "81,31",
+        5,
+        49
+      ],
+      [
+        "Sala final (reserva)",
+        8000,
+        "360,51",
+        "265,70",
+        "94,81",
+        5,
+        53
+      ]
+    ],
+    "purchases": [
+      [
+        24,
+        "Sala 1",
+        "reinforced_bag",
+        1,
+        "0,25",
+        "0,00"
+      ],
+      [
+        42,
+        "Sala 1",
+        "quick_hands",
+        1,
+        "0,20",
+        "0,00"
+      ],
+      [
+        98,
+        "Sala 1",
+        "reinforced_bag",
+        2,
+        "0,60",
+        "0,00"
+      ],
+      [
+        186,
+        "Sala 1",
+        "multi_pickup",
+        1,
+        "0,95",
+        "0,00"
+      ],
+      [
+        465,
+        "Sala 1",
+        "recycle_value",
+        1,
+        "3,00",
+        "0,00"
+      ],
+      [
+        481,
+        "Sala 1",
+        "manual_reach",
+        1,
+        "0,35",
+        "0,01"
+      ],
+      [
+        505,
+        "Sala 1",
+        "sprint",
+        1,
+        "0,50",
+        "0,01"
+      ],
+      [
+        525,
+        "Sala 1",
+        "quick_hands",
+        2,
+        "0,45",
+        "0,00"
+      ],
+      [
+        930,
+        "Despacho",
+        "broom",
+        1,
+        "1,50",
+        "7,80"
+      ],
+      [
+        930,
+        "Despacho",
+        "reinforced_bag",
+        3,
+        "1,25",
+        "6,55"
+      ],
+      [
+        930,
+        "Despacho",
+        "broom_speed",
+        1,
+        "1,25",
+        "5,30"
+      ],
+      [
+        930,
+        "Despacho",
+        "broom_width",
+        1,
+        "1,50",
+        "3,80"
+      ],
+      [
+        1303,
+        "Sala 2",
+        "vacuum",
+        1,
+        "12,00",
+        "0,00"
+      ],
+      [
+        1667,
+        "Sala 2",
+        "recycle_value",
+        2,
+        "8,00",
+        "0,00"
+      ],
+      [
+        1735,
+        "Sala 2",
+        "vacuum_reach",
+        1,
+        "2,25",
+        "0,00"
+      ],
+      [
+        1789,
+        "Sala 2",
+        "vacuum_battery",
+        1,
+        "1,75",
+        "0,02"
+      ],
+      [
+        1814,
+        "Sala 2",
+        "quick_hands",
+        3,
+        "0,85",
+        "0,01"
+      ],
+      [
+        1841,
+        "Sala 2",
+        "manual_reach",
+        2,
+        "0,90",
+        "0,01"
+      ],
+      [
+        1864,
+        "Sala 2",
+        "sealed_bags",
+        1,
+        "0,75",
+        "0,01"
+      ],
+      [
+        2258,
+        "Sala 3 Acción",
+        "recycle_value",
+        3,
+        "14,00",
+        "0,00"
+      ],
+      [
+        2310,
+        "Sala 3 Acción",
+        "reinforced_bag",
+        4,
+        "2,25",
+        "0,07"
+      ],
+      [
+        2360,
+        "Sala 3 Acción",
+        "multi_pickup",
+        2,
+        "2,20",
+        "0,07"
+      ],
+      [
+        2439,
+        "Sala 3 Acción",
+        "vacuum_battery",
+        2,
+        "3,50",
+        "0,01"
+      ],
+      [
+        2473,
+        "Sala 3 Acción",
+        "vacuum_recharge",
+        1,
+        "1,50",
+        "0,03"
+      ],
+      [
+        2541,
+        "Sala 3 Acción",
+        "broom_speed",
+        2,
+        "3,00",
+        "0,03"
+      ],
+      [
+        2620,
+        "Sala 3 Acción",
+        "broom_width",
+        2,
+        "3,50",
+        "0,01"
+      ],
+      [
+        2649,
+        "Sala 3 Acción",
+        "sprint",
+        2,
+        "1,25",
+        "0,00"
+      ],
+      [
+        2671,
+        "Sala 3 Acción",
+        "all_seeing_eye",
+        1,
+        "1,00",
+        "0,00"
+      ],
+      [
+        3120,
+        "Entrada y vestíbulo",
+        "recycle_value",
+        4,
+        "18,00",
+        "2,76"
+      ],
+      [
+        3216,
+        "Entrada y vestíbulo",
+        "reinforced_bag",
+        5,
+        "8,00",
+        "0,01"
+      ],
+      [
+        3298,
+        "Entrada y vestíbulo",
+        "vacuum_reach",
+        2,
+        "4,50",
+        "0,01"
+      ],
+      [
+        3416,
+        "Entrada y vestíbulo",
+        "vacuum_battery",
+        3,
+        "6,50",
+        "0,01"
+      ],
+      [
+        3470,
+        "Entrada y vestíbulo",
+        "vacuum_recharge",
+        2,
+        "3,00",
+        "0,01"
+      ],
+      [
+        3548,
+        "Entrada y vestíbulo",
+        "multi_pickup",
+        3,
+        "4,25",
+        "0,01"
+      ],
+      [
+        3573,
+        "Entrada y vestíbulo",
+        "quick_hands",
+        4,
+        "1,40",
+        "0,01"
+      ],
+      [
+        3606,
+        "Entrada y vestíbulo",
+        "manual_reach",
+        3,
+        "1,80",
+        "0,01"
+      ],
+      [
+        3651,
+        "Entrada y vestíbulo",
+        "all_seeing_eye",
+        2,
+        "2,50",
+        "0,01"
+      ],
+      [
+        3684,
+        "Entrada y vestíbulo",
+        "sealed_bags",
+        2,
+        "1,80",
+        "0,01"
+      ],
+      [
+        3730,
+        "Entrada y vestíbulo",
+        "sprint",
+        3,
+        "2,50",
+        "0,06"
+      ],
+      [
+        4820,
+        "Sala 4 Miedo",
+        "multi_pickup",
+        4,
+        "12,00",
+        "48,76"
+      ],
+      [
+        4820,
+        "Sala 4 Miedo",
+        "quick_hands",
+        5,
+        "2,20",
+        "46,56"
+      ],
+      [
+        4820,
+        "Sala 4 Miedo",
+        "manual_reach",
+        4,
+        "3,00",
+        "43,56"
+      ],
+      [
+        4820,
+        "Sala 4 Miedo",
+        "vacuum_reach",
+        3,
+        "8,50",
+        "35,06"
+      ],
+      [
+        4820,
+        "Sala 4 Miedo",
+        "vacuum_recharge",
+        3,
+        "5,50",
+        "29,56"
+      ],
+      [
+        4820,
+        "Sala 4 Miedo",
+        "sprint",
+        4,
+        "4,25",
+        "25,31"
+      ],
+      [
+        4820,
+        "Sala 4 Miedo",
+        "sprint",
+        5,
+        "10,00",
+        "15,31"
+      ],
+      [
+        4820,
+        "Sala 4 Miedo",
+        "all_seeing_eye",
+        3,
+        "7,00",
+        "8,31"
+      ],
+      [
+        4820,
+        "Sala 4 Miedo",
+        "sealed_bags",
+        3,
+        "3,50",
+        "4,81"
+      ],
+      [
+        4820,
+        "Sala 4 Miedo",
+        "sealed_bags",
+        4,
+        "4,00",
+        "0,81"
+      ],
+      [
+        6270,
+        "Sala final (reserva)",
+        "vacuum_reach",
+        4,
+        "30,00",
+        "51,31"
+      ],
+      [
+        6270,
+        "Sala final (reserva)",
+        "vacuum_battery",
+        4,
+        "22,00",
+        "29,31"
+      ],
+      [
+        6270,
+        "Sala final (reserva)",
+        "vacuum_recharge",
+        4,
+        "20,00",
+        "9,31"
+      ],
+      [
+        6270,
+        "Sala final (reserva)",
+        "sealed_bags",
+        5,
+        "9,00",
+        "0,31"
+      ]
+    ]
+  }
+}

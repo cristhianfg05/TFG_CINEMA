@@ -1,16 +1,34 @@
-[gd_scene load_steps=14 format=3]
+[gd_scene format=3 uid="uid://kt0kgg6ong3g"]
 
-[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="1_player"]
+[ext_resource type="PackedScene" uid="uid://bvwxpypjx8p4m" path="res://scenes/player/player.tscn" id="1_player"]
 [ext_resource type="PackedScene" path="res://scenes/rooms/room_01_blockout.tscn" id="2_room"]
-[ext_resource type="PackedScene" path="res://scenes/gameplay/gameplay_manager.tscn" id="3_manager"]
+[ext_resource type="PackedScene" uid="uid://bjojx2n1p8hll" path="res://scenes/gameplay/gameplay_manager.tscn" id="3_manager"]
 [ext_resource type="PackedScene" path="res://scenes/gameplay/trash_bin.tscn" id="4_bin"]
 [ext_resource type="PackedScene" path="res://scenes/ui/gameplay_hud.tscn" id="5_hud"]
-[ext_resource type="PackedScene" path="res://scenes/gameplay/lost_found_box.tscn" id="6_lost_found"]
-[ext_resource type="PackedScene" path="res://scenes/characters/manager.tscn" id="7_manager_npc"]
-[ext_resource type="PackedScene" path="res://scenes/gameplay/exit_door.tscn" id="8_exit"]
-[ext_resource type="PackedScene" path="res://scenes/characters/spectator_placeholder.tscn" id="9_spectator"]
-[ext_resource type="PackedScene" path="res://scenes/gameplay/screen_content.tscn" id="10_screen"]
 [ext_resource type="PackedScene" path="res://scenes/ui/pause_menu.tscn" id="11_pause"]
+[ext_resource type="PackedScene" path="res://scenes/ui/upgrade_menu.tscn" id="12_upgrade"]
+[ext_resource type="PackedScene" path="res://scenes/ui/tool_shop_panel.tscn" id="13_shop"]
+[ext_resource type="PackedScene" path="res://scenes/ui/game_intro.tscn" id="14_intro"]
+[ext_resource type="PackedScene" path="res://scenes/gameplay/document_pickup.tscn" id="15_document"]
+[ext_resource type="AudioStream" uid="uid://h5ii3radpm4s" path="res://assets/audio/music/music_room1_03.wav" id="15_hxu8e"]
+[ext_resource type="Script" path="res://scripts/cinema_global_music.gd" id="15_global_music"]
+[ext_resource type="PackedScene" path="res://scenes/gameplay/collectible_pickup.tscn" id="16_collectible"]
+[ext_resource type="PackedScene" path="res://scenes/rooms/left_wing_blockout.tscn" id="17_left_wing"]
+[ext_resource type="Script" uid="uid://ccmev6tnemjrx" path="res://scripts/arcade_reel_rescue.gd" id="18_arcade"]
+[ext_resource type="Script" path="res://scripts/arcade_last_usher_survivor.gd" id="18_usher_arcade"]
+[ext_resource type="PackedScene" path="res://scenes/rooms/room_02_blockout.tscn" id="19_room_02"]
+[ext_resource type="AudioStream" path="res://assets/audio/music/music_room2_03.wav" id="20_room_02_music_stream"]
+[ext_resource type="AudioStream" path="res://assets/audio/music/music_room3_action_01.wav" id="28_room_03_music_stream"]
+[ext_resource type="AudioStream" path="res://assets/audio/music/music_room4_fear_03.wav" id="29_room_04_music_stream"]
+[ext_resource type="AudioStream" path="res://assets/audio/ambience/room_radio_static_loop.wav" id="21_radio_static"]
+[ext_resource type="Script" path="res://scripts/cinema_room_audio_controller.gd" id="22_room_audio_controller"]
+[ext_resource type="Script" path="res://scripts/cinema_room_audio_system.gd" id="23_room_audio_system"]
+[ext_resource type="Script" path="res://scripts/cinema_movie_controller.gd" id="24_movie_controller"]
+[ext_resource type="Script" path="res://scripts/cinema_seat_system.gd" id="25_seat_system"]
+[ext_resource type="Script" path="res://scripts/cinema_expansion_blockout.gd" id="26_expansion"]
+[ext_resource type="Script" path="res://scripts/cinema_new_auditorium.gd" id="27_auditorium"]
+[ext_resource type="Script" path="res://scripts/recording_director.gd" id="30_recording_director"]
+[ext_resource type="Script" path="res://scripts/hammer_controller.gd" id="31_hammer_controller"]
 
 [sub_resource type="Environment" id="Environment_main"]
 background_mode = 1
@@ -20,65 +38,214 @@ ambient_light_color = Color(0.32, 0.36, 0.48, 1)
 ambient_light_energy = 0.8
 reflected_light_source = 2
 
-[node name="Main" type="Node3D"]
+[node name="Main" type="Node3D" unique_id=1122165484]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=113417441]
 environment = SubResource("Environment_main")
 
-[node name="KeyLight" type="DirectionalLight3D" parent="."]
-rotation_degrees = Vector3(-55, -28, 0)
+[node name="KeyLight" type="DirectionalLight3D" parent="." unique_id=1259337480]
+transform = Transform3D(0.88294756, 0.3845686, -0.26927784, 0, 0.57357645, 0.81915206, 0.46947157, -0.72326833, 0.50643796, 0, 0, 0)
 light_color = Color(1, 0.83, 0.69, 1)
 light_energy = 0.65
 directional_shadow_max_distance = 40.0
 
-[node name="RearHouseLight" type="OmniLight3D" parent="."]
-position = Vector3(0, 4.5, 7)
+[node name="RearHouseLight" type="OmniLight3D" parent="." unique_id=1948046925]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 7)
 light_color = Color(1, 0.72, 0.5, 1)
 light_energy = 2.2
 omni_range = 16.0
 omni_attenuation = 0.7
 
-[node name="FrontHouseLight" type="OmniLight3D" parent="."]
-position = Vector3(0, 4.5, -7)
+[node name="FrontHouseLight" type="OmniLight3D" parent="." unique_id=1913698336]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, -7)
 light_color = Color(0.52, 0.62, 1, 1)
 light_energy = 1.7
 omni_range = 16.0
 omni_attenuation = 0.7
 
-[node name="RespawnPoint" type="Marker3D" parent="." groups=["respawn_point"]]
-position = Vector3(0, 0.1, 11.5)
+[node name="RespawnPoint" type="Marker3D" parent="." unique_id=1593593947 groups=["respawn_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.54, 0.1, -10.1)
 
-[node name="Room01Blockout" parent="." instance=ExtResource("2_room")]
+[node name="Room01Blockout" parent="." unique_id=533492003 instance=ExtResource("2_room")]
 
-[node name="Player" parent="." instance=ExtResource("1_player")]
+[node name="Player" parent="." unique_id=1973249674 instance=ExtResource("1_player")]
 
-[node name="GameplayManager" parent="." instance=ExtResource("3_manager")]
+[node name="GameplayManager" parent="." unique_id=649074056 instance=ExtResource("3_manager")]
 
-[node name="TrashBin" parent="." instance=ExtResource("4_bin")]
-position = Vector3(-8.5, 0, 12.5)
+[node name="LeftWingBlockout" parent="." unique_id=1966205019 instance=ExtResource("17_left_wing")]
 
-[node name="LostFoundBox" parent="." instance=ExtResource("6_lost_found")]
-position = Vector3(-5.4, 0, 13.3)
+[node name="Room02Blockout" parent="." unique_id=2117980756 instance=ExtResource("19_room_02")]
 
-[node name="Manager" parent="." instance=ExtResource("7_manager_npc")]
-position = Vector3(3.8, 0, 13.3)
+[node name="CinemaExpansionBlockout" type="Node3D" parent="."]
+script = ExtResource("26_expansion")
 
-[node name="ExitDoor" parent="." instance=ExtResource("8_exit")]
-position = Vector3(7.5, 0, 14.92)
+[node name="Room03Blockout" type="Node3D" parent="."]
+script = ExtResource("27_auditorium")
+room_id = &"room_03"
 
-[node name="SpectatorLeft" parent="." instance=ExtResource("9_spectator")]
-position = Vector3(-4, 0, 0.2)
-shirt_color = Color(0.42, 0.28, 0.56, 1)
-phase_offset = 0.5
+[node name="Room04Blockout" type="Node3D" parent="."]
+position = Vector3(71.9, 0, 24)
+script = ExtResource("27_auditorium")
+room_id = &"room_04"
 
-[node name="SpectatorRight" parent="." instance=ExtResource("9_spectator")]
-position = Vector3(4, 0, 2.6)
-shirt_color = Color(0.22, 0.46, 0.48, 1)
-phase_offset = 2.4
+[node name="Sala1DocumentDoc1" parent="." unique_id=739065943 instance=ExtResource("15_document")]
+transform = Transform3D(0.99026805, 0, -0.1391731, 0, 1, 0, 0.1391731, 0, 0.99026805, -1.54, 0.035, -11.25)
+document_id = "Doc1"
 
-[node name="ScreenContent" parent="." instance=ExtResource("10_screen")]
-position = Vector3(0, 3.25, -14.65)
+[node name="Sala1DocumentDoc2" parent="." unique_id=1809628429 instance=ExtResource("15_document")]
+transform = Transform3D(0.9781476, 0, 0.2079117, 0, 1, 0, -0.2079117, 0, 0.9781476, 0, 1.19, 9.15)
+document_id = "Doc2"
 
-[node name="GameplayHUD" parent="." instance=ExtResource("5_hud")]
+[node name="Sala1CollectibleCapitanOrbita" parent="." unique_id=540605003 instance=ExtResource("16_collectible")]
+transform = Transform3D(0.9396926, 0, 0.34202012, 0, 1, 0, -0.34202012, 0, 0.9396926, -10.45, 0.005, -12.45)
+collectible_id = "capitan_orbita"
 
-[node name="PauseMenu" parent="." instance=ExtResource("11_pause")]
+[node name="Sala2CollectibleAmelia" parent="." instance=ExtResource("16_collectible")]
+position = Vector3(25.5, 0.005, 52.1)
+rotation_degrees = Vector3(0, 31, 0)
+collectible_id = "amelia_del_anden"
+
+[node name="Sala2CollectibleParaguas" parent="." instance=ExtResource("16_collectible")]
+position = Vector3(28.2, 0.005, 56.05)
+rotation_degrees = Vector3(0, -38, 0)
+collectible_id = "hombre_del_paraguas"
+
+[node name="VestibuloCollectiblePalomito" parent="." instance=ExtResource("16_collectible")]
+position = Vector3(16.6, 0.005, 8.6)
+rotation_degrees = Vector3(0, 67, 0)
+collectible_id = "palomito"
+
+[node name="VestibuloCollectibleReinaRefresco" parent="." instance=ExtResource("16_collectible")]
+position = Vector3(13.3, 0.005, -10.8)
+rotation_degrees = Vector3(0, -24, 0)
+collectible_id = "reina_refresco"
+
+[node name="Sala4CollectibleDevorapalomitas" parent="." instance=ExtResource("16_collectible")]
+position = Vector3(22.7, 0.005, -32.5)
+rotation_degrees = Vector3(0, 42, 0)
+collectible_id = "devorapalomitas"
+
+[node name="Sala4CollectibleAcomodador" parent="." instance=ExtResource("16_collectible")]
+position = Vector3(27.9, 1.7, 8.0)
+rotation_degrees = Vector3(0, -64, 0)
+collectible_id = "acomodador_sin_rostro"
+
+[node name="Sala3CollectibleDetective" parent="." instance=ExtResource("16_collectible")]
+position = Vector3(-17.5, 0.005, 54.4)
+rotation_degrees = Vector3(0, 55, 0)
+collectible_id = "detective_mecha_corta"
+
+[node name="Sala3CollectiblePaloma" parent="." instance=ExtResource("16_collectible")]
+position = Vector3(1.8, 0.005, 51.8)
+rotation_degrees = Vector3(0, -17, 0)
+collectible_id = "paloma_dinamita"
+
+[node name="TrashBin" parent="." unique_id=124104781 instance=ExtResource("4_bin")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6.75, 0, 14.5)
+
+[node name="GameplayHUD" parent="." unique_id=930284300 instance=ExtResource("5_hud")]
+
+[node name="ToolShopPanel" parent="." unique_id=136803108 instance=ExtResource("13_shop")]
+
+[node name="UpgradeMenu" parent="." unique_id=1366114037 instance=ExtResource("12_upgrade")]
+
+[node name="PauseMenu" parent="." unique_id=963801108 instance=ExtResource("11_pause")]
+
+[node name="GameIntro" parent="." unique_id=531801669 instance=ExtResource("14_intro")]
+
+[node name="RecordingDirector" type="Node" parent="."]
+script = ExtResource("30_recording_director")
+
+[node name="HammerController" type="Node3D" parent="."]
+script = ExtResource("31_hammer_controller")
+
+[node name="ArcadeReelRescue" type="CanvasLayer" parent="." unique_id=1645734570]
+process_mode = 3
+layer = 40
+script = ExtResource("18_arcade")
+
+[node name="ArcadeLastUsher" type="CanvasLayer" parent="."]
+process_mode = 3
+layer = 40
+script = ExtResource("18_usher_arcade")
+
+[node name="CinemaGlobalMusic" type="Node" parent="." unique_id=1971596468]
+script = ExtResource("15_global_music")
+stream = ExtResource("15_hxu8e")
+bus = &"Music"
+
+[node name="CinemaRoomAudioSystem" type="Node" parent="."]
+script = ExtResource("23_room_audio_system")
+
+[node name="Room01Audio" type="Node3D" parent="CinemaRoomAudioSystem"]
+script = ExtResource("22_room_audio_controller")
+room_id = &"room_01"
+physical_room_path = NodePath("../../Room01Blockout")
+speaker_names = PackedStringArray("CinemaSpeakerLeft", "CinemaSpeakerRight")
+disabled_audio = ExtResource("21_radio_static")
+side_music = ExtResource("15_hxu8e")
+side_music_always_on = true
+
+[node name="Room02Audio" type="Node3D" parent="CinemaRoomAudioSystem"]
+script = ExtResource("22_room_audio_controller")
+room_id = &"room_02"
+physical_room_path = NodePath("../../Room02Blockout")
+speaker_names = PackedStringArray("Room02CinemaSpeakerLeft", "Room02CinemaSpeakerRight")
+disabled_audio = ExtResource("21_radio_static")
+enabled_music = ExtResource("20_room_02_music_stream")
+
+[node name="Room03Audio" type="Node3D" parent="CinemaRoomAudioSystem"]
+script = ExtResource("22_room_audio_controller")
+room_id = &"room_03"
+physical_room_path = NodePath("../../Room03Blockout")
+speaker_names = PackedStringArray("Room03CinemaSpeakerLeft", "Room03CinemaSpeakerRight")
+disabled_audio = ExtResource("21_radio_static")
+enabled_music = ExtResource("28_room_03_music_stream")
+static_max_distance = 27.0
+static_only_inside_room = true
+
+[node name="Room04Audio" type="Node3D" parent="CinemaRoomAudioSystem"]
+script = ExtResource("22_room_audio_controller")
+room_id = &"room_04"
+physical_room_path = NodePath("../../Room04Blockout")
+speaker_names = PackedStringArray("Room04CinemaSpeakerLeft", "Room04CinemaSpeakerRight")
+disabled_audio = ExtResource("21_radio_static")
+enabled_music = ExtResource("29_room_04_music_stream")
+
+[node name="CinemaMovieSystem" type="Node" parent="."]
+
+[node name="Room01Movie" type="Node3D" parent="CinemaMovieSystem"]
+script = ExtResource("24_movie_controller")
+room_id = &"room_01"
+movie_folder = "res://assets/pipeline/movies/room_1"
+clip_count = 3
+screen_path = NodePath("../../Room01Blockout/Screen")
+screen_size = Vector2(12, 5)
+audience_side = 1.0
+
+[node name="Room02Movie" type="Node3D" parent="CinemaMovieSystem"]
+script = ExtResource("24_movie_controller")
+room_id = &"room_02"
+movie_folder = "res://assets/movies/room_2"
+screen_path = NodePath("../../Room02Blockout/Room02Screen")
+screen_size = Vector2(14.2, 5.2)
+audience_side = -1.0
+
+[node name="Room03Movie" type="Node3D" parent="CinemaMovieSystem"]
+script = ExtResource("24_movie_controller")
+room_id = &"room_03"
+movie_folder = "res://assets/movies/room_3"
+screen_path = NodePath("../../Room03Blockout/Screen")
+screen_size = Vector2(14.2, 5.2)
+audience_side = -1.0
+
+[node name="Room04Movie" type="Node3D" parent="CinemaMovieSystem"]
+script = ExtResource("24_movie_controller")
+room_id = &"room_04"
+movie_folder = "res://assets/movies/room_4"
+screen_path = NodePath("../../Room04Blockout/Screen")
+screen_size = Vector2(12.2, 5.2)
+audience_side = 1.0
+
+[node name="CinemaSeatSystem" type="Node" parent="."]
+script = ExtResource("25_seat_system")

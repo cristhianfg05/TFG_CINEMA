@@ -1,16 +1,57 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene format=3 uid="uid://bjojx2n1p8hll"]
 
-[ext_resource type="Script" path="res://scripts/gameplay_manager.gd" id="1_manager"]
+[ext_resource type="Script" uid="uid://b7lko00yqttl" path="res://scripts/gameplay_manager.gd" id="1_manager"]
 
-[node name="GameplayManager" type="Node" groups=["gameplay_manager"]]
+[node name="GameplayManager" type="Node" unique_id=188619947 groups=["gameplay_manager"]]
 script = ExtResource("1_manager")
 
-[node name="TrashItems" type="Node3D" parent="."]
+[node name="TrashItems" type="Node3D" parent="." unique_id=1605643498]
 
-[node name="LostItems" type="Node3D" parent="."]
+[node name="LostItems" type="Node3D" parent="." unique_id=1534110201]
 
-[node name="PickupAudio" type="AudioStreamPlayer" parent="."]
+[node name="SealedBags" type="Node3D" parent="." unique_id=725642313]
+
+[node name="PickupAudio" type="AudioStreamPlayer" parent="." unique_id=747518147]
 volume_db = -12.0
 
-[node name="EmptyAudio" type="AudioStreamPlayer" parent="."]
+[node name="EmptyAudio" type="AudioStreamPlayer" parent="." unique_id=497268344]
 volume_db = -10.0
+
+[node name="RejectAudio" type="AudioStreamPlayer" parent="." unique_id=1621850802]
+volume_db = -28.0
+
+[node name="VacuumAudio" type="AudioStreamPlayer" parent="." unique_id=2092229474]
+volume_db = -13.0
+bus = &"Tools"
+
+[node name="VacuumTransitionAudio" type="AudioStreamPlayer" parent="."]
+volume_db = -14.0
+bus = &"Tools"
+
+[node name="BinDeliveryAudio" type="AudioStreamPlayer" parent="." unique_id=893013042]
+volume_db = -14.0
+bus = &"Trash"
+
+[node name="TrashPickupAudio" type="AudioStreamPlayer" parent="." unique_id=2036797159]
+volume_db = -18.0
+bus = &"Trash"
+
+[node name="CoinRewardAudio" type="AudioStreamPlayer" parent="." unique_id=1789816753]
+volume_db = -15.0
+bus = &"Trash"
+
+[node name="BagFullAudio" type="AudioStreamPlayer" parent="." unique_id=929758122]
+volume_db = -17.0
+bus = &"Trash"
+
+[node name="BagSealAudio" type="AudioStreamPlayer" parent="." unique_id=1104432771]
+volume_db = -15.0
+bus = &"Trash"
+
+[node name="BagThrowAudio" type="AudioStreamPlayer" parent="." unique_id=1362607562]
+volume_db = -16.0
+bus = &"Trash"
+
+[node name="DocumentPickupAudio" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
+bus = &"Player"

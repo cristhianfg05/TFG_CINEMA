@@ -1,12 +1,15 @@
-[gd_resource type="Resource" script_class="TrashDefinition" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="TrashDefinition" load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://resources/trash/trash_definition.gd" id="1"]
+[ext_resource type="PackedScene" path="res://assets/models/source/trash/CuboPalomitas.glb" id="2_model"]
 
 [resource]
 script = ExtResource("1")
 id = &"bucket"
 display_name = "Cubo de palomitas"
 category = &"container"
-volume = 1.5
-reward = 4
+size_units = 2
+reward = 2
 destination = &"trash_bin"
+model = ExtResource("2_model")
+model_scale = 1.47

@@ -1,9 +1,12 @@
 extends Control
 
 const SAVE_PATH := "user://cinema_cleaner_save.json"
+@warning_ignore("shadowed_global_identifier")
+const PointerTheme := preload("res://scripts/pointer_theme.gd")
 
 
 func _ready() -> void:
+	PointerTheme.apply_menu_cursors()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	_build_ui()
@@ -32,7 +35,7 @@ func _build_ui() -> void:
 	content.add_child(title)
 
 	var subtitle := Label.new()
-	subtitle.text = "Vertical slice provisional — FASE 3"
+	subtitle.text = "Prueba de arte — FASE 4"
 	subtitle.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	subtitle.add_theme_font_size_override("font_size", 20)
 	content.add_child(subtitle)
@@ -40,6 +43,7 @@ func _build_ui() -> void:
 	var new_game := Button.new()
 	new_game.text = "Nueva partida"
 	new_game.custom_minimum_size = Vector2(470, 58)
+	PointerTheme.set_button_cursor(new_game)
 	new_game.pressed.connect(_start_new_game)
 	content.add_child(new_game)
 
@@ -47,11 +51,12 @@ func _build_ui() -> void:
 	continue_game.text = "Continuar"
 	continue_game.custom_minimum_size = Vector2(470, 58)
 	continue_game.disabled = not FileAccess.file_exists(SAVE_PATH)
+	PointerTheme.set_button_cursor(continue_game)
 	continue_game.pressed.connect(_continue_game)
 	content.add_child(continue_game)
 
 	var hint := Label.new()
-	hint.text = "Clic derecho recoger · E interactuar · Clic izquierdo tirar reloj · Esc pausa"
+	hint.text = "Clic derecho recoger · E interactuar · Tab mejoras · Esc pausa"
 	hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	hint.add_theme_font_size_override("font_size", 17)

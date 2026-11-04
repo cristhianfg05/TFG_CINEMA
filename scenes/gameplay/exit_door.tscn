@@ -1,22 +1,9 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://scripts/exit_door.gd" id="1_door"]
+[ext_resource type="PackedScene" path="res://scenes/gameplay/roller_shutter_door.tscn" id="2_shutter"]
 
-[sub_resource type="BoxMesh" id="DoorMesh"]
-size = Vector3(1.75, 2.1, 0.16)
-
-[sub_resource type="BoxShape3D" id="DoorShape"]
-size = Vector3(1.75, 2.1, 0.16)
-
-[node name="ExitDoor" type="StaticBody3D"]
-collision_layer = 1
-collision_mask = 1
+[node name="ExitDoor" type="Node3D"]
 script = ExtResource("1_door")
 
-[node name="Mesh" type="MeshInstance3D" parent="."]
-position = Vector3(0, 1.05, 0)
-mesh = SubResource("DoorMesh")
-
-[node name="Collision" type="CollisionShape3D" parent="."]
-position = Vector3(0, 1.05, 0)
-shape = SubResource("DoorShape")
+[node name="RollerShutterDoor" parent="." instance=ExtResource("2_shutter")]

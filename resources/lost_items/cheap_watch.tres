@@ -6,5 +6,5 @@
 script = ExtResource("1")
 id = &"cheap_watch"
 display_name = "Reloj barato"
-return_reward = 8
+return_reward = 25
 destruction_penalty = 5

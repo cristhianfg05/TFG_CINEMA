@@ -24,7 +24,7 @@ func set_focused(focused: bool) -> void:
 func get_interaction_prompt() -> String:
 	var manager = get_tree().get_first_node_in_group("gameplay_manager")
 	if manager and manager.lost_item_state == "carried":
-		return "E — Entregar reloj perdido (+8 monedas)"
+		return "E — Entregar reloj perdido (+25 monedas)"
 	if manager and manager.lost_item_state == "returned":
 		return "Objetos perdidos: reloj entregado"
 	return "Cajón de objetos perdidos"

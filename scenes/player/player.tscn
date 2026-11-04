@@ -1,38 +1,50 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene format=3 uid="uid://bvwxpypjx8p4m"]
 
-[ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_player"]
+[ext_resource type="Script" uid="uid://dhvqiwrm1v0r4" path="res://scripts/player_controller.gd" id="1_player"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape_player"]
 radius = 0.35
 height = 1.8
 
-[node name="Player" type="CharacterBody3D" groups=["player"]]
-collision_layer = 1
-collision_mask = 1
+[sub_resource type="SphereShape3D" id="SphereShape_trash_push"]
+
+[node name="Player" type="CharacterBody3D" unique_id=806073816 groups=["player"]]
+collision_mask = 9
 floor_snap_length = 0.3
-floor_max_angle = 0.785398
 script = ExtResource("1_player")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-position = Vector3(0, 0.9, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1866441468]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 shape = SubResource("CapsuleShape_player")
 
-[node name="Head" type="Node3D" parent="."]
-position = Vector3(0, 1.65, 0)
+[node name="Head" type="Node3D" parent="." unique_id=1301112418]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.65, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Head"]
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1475261836]
 current = true
-fov = 75.0
-near = 0.05
+far = 80.0
 
-[node name="InteractionRayCast3D" type="RayCast3D" parent="Head/Camera3D"]
+[node name="InteractionRayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=1583481929]
 target_position = Vector3(0, 0, -3)
-collision_mask = 3
+collision_mask = 11
 collide_with_areas = true
-exclude_parent = true
 
-[node name="CeilingCheck" type="RayCast3D" parent="."]
-position = Vector3(0, 1.0, 0)
+[node name="SackCarryAnchor" type="Node3D" parent="Head/Camera3D" unique_id=1890513409]
+
+[node name="CeilingCheck" type="RayCast3D" parent="." unique_id=241791140]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 target_position = Vector3(0, 0.85, 0)
-collision_mask = 1
-exclude_parent = true
+collision_mask = 9
+
+[node name="TrashPushArea" type="Area3D" parent="." unique_id=760527685]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TrashPushArea" unique_id=1440387439]
+shape = SubResource("SphereShape_trash_push")
+
+[node name="FootstepAudio" type="AudioStreamPlayer" parent="." unique_id=1015506209]
+volume_db = -32.0
+bus = &"Player"

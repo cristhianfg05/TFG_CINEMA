@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=4 format=3]
 
 [ext_resource type="Script" path="res://scripts/gameplay_hud.gd" id="1_hud"]
+[ext_resource type="AudioStream" path="res://assets/audio/sfx/ui/objective_piano_candidate_02.wav" id="2_objective_piano"]
+[ext_resource type="AudioStream" path="res://assets/audio/sfx/ui/objective_new_question_candidate_03.wav" id="3_new_objective"]
 
 [node name="GameplayHUD" type="CanvasLayer"]
 layer = 10
 script = ExtResource("1_hud")
+objective_complete_sound = ExtResource("2_objective_piano")
+objective_new_sound = ExtResource("3_new_objective")

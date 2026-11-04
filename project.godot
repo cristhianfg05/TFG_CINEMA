@@ -11,15 +11,29 @@ config_version=5
 [application]
 
 config/name="Cinema Cleaner"
-config/version="0.3.0-playtest.2"
+config/version="0.4.0-playtest.3"
 run/main_scene="res://scenes/main/main_menu.tscn"
 config/features=PackedStringArray("4.7", "Forward Plus")
+
+[audio]
+
+default_bus_layout="res://default_bus_layout.tres"
+
+[autoload]
+
+MCPRuntimeBridge="*res://addons/godot_mcp/services/mcp_runtime_bridge.gd"
+MCPInputBridge="*res://addons/godot_mcp/services/mcp_input_bridge.gd"
+MCPScreenshotBridge="*res://addons/godot_mcp/services/mcp_screenshot_bridge.gd"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_mcp/plugin.cfg")
 
 [input]
 
@@ -78,6 +92,31 @@ pause={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194305,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
+upgrade_menu={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194308,"physical_keycode":0,"key_label":0,"unicode":9,"location":0,"echo":false,"script":null)
+]
+}
+ability_1={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":49,"physical_keycode":49,"key_label":49,"unicode":49,"location":0,"echo":false,"script":null)
+]
+}
+ability_2={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":50,"physical_keycode":50,"key_label":50,"unicode":50,"location":0,"echo":false,"script":null)
+]
+}
+seal_bag={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":66,"physical_keycode":66,"key_label":66,"unicode":98,"location":0,"echo":false,"script":null)
+]
+}
+cycle_tool={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"physical_keycode":81)
+]
+}
 debug_reset={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":82,"physical_keycode":82,"key_label":82,"unicode":114,"location":0,"echo":false,"script":null)
@@ -86,4 +125,5 @@ debug_reset={
 
 [rendering]
 
+anti_aliasing/quality/msaa_3d=2
 environment/defaults/default_clear_color=Color(0.035, 0.035, 0.045, 1)
