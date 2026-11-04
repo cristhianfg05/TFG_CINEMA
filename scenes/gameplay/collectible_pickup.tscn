@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/collectible_pickup.gd" id="1_script"]
+
+[sub_resource type="CapsuleShape3D" id="Shape_collectible"]
+radius = 0.28
+height = 0.78
+
+[node name="CollectiblePickup" type="Area3D"]
+collision_layer = 2
+collision_mask = 0
+monitoring = false
+monitorable = true
+script = ExtResource("1_script")
+
+[node name="VisualRoot" type="Node3D" parent="."]
+
+[node name="InteractionShape" type="CollisionShape3D" parent="."]
+position = Vector3(0, 0.39, 0)
+shape = SubResource("Shape_collectible")
+

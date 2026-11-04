@@ -1,0 +1,105 @@
+[gd_scene load_steps=11 format=3]
+
+[sub_resource type="StandardMaterial3D" id="Material_burgundy"]
+albedo_color = Color(0.38, 0.095, 0.13, 1)
+roughness = 0.82
+
+[sub_resource type="StandardMaterial3D" id="Material_cream"]
+albedo_color = Color(0.82, 0.74, 0.58, 1)
+roughness = 0.76
+
+[sub_resource type="StandardMaterial3D" id="Material_charcoal"]
+albedo_color = Color(0.055, 0.06, 0.07, 1)
+metallic = 0.28
+roughness = 0.68
+
+[sub_resource type="StandardMaterial3D" id="Material_gold"]
+albedo_color = Color(0.68, 0.45, 0.16, 1)
+metallic = 0.38
+roughness = 0.56
+
+[sub_resource type="CylinderMesh" id="Mesh_base"]
+material = SubResource("Material_charcoal")
+top_radius = 0.18
+bottom_radius = 0.21
+height = 0.08
+radial_segments = 12
+rings = 1
+
+[sub_resource type="CapsuleMesh" id="Mesh_body"]
+material = SubResource("Material_burgundy")
+radius = 0.115
+height = 0.32
+radial_segments = 12
+rings = 4
+
+[sub_resource type="SphereMesh" id="Mesh_helmet"]
+material = SubResource("Material_cream")
+radius = 0.16
+height = 0.32
+radial_segments = 16
+rings = 8
+
+[sub_resource type="SphereMesh" id="Mesh_visor"]
+material = SubResource("Material_charcoal")
+radius = 0.12
+height = 0.24
+radial_segments = 12
+rings = 6
+
+[sub_resource type="BoxMesh" id="Mesh_box_cream"]
+material = SubResource("Material_cream")
+size = Vector3(0.09, 0.22, 0.09)
+
+[sub_resource type="BoxMesh" id="Mesh_box_gold"]
+material = SubResource("Material_gold")
+size = Vector3(0.055, 0.20, 0.055)
+
+[node name="CapitanOrbitaModel" type="Node3D"]
+
+[node name="Base" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.04, 0)
+mesh = SubResource("Mesh_base")
+
+[node name="Body" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.265, 0)
+mesh = SubResource("Mesh_body")
+
+[node name="Helmet" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.51, 0)
+mesh = SubResource("Mesh_helmet")
+
+[node name="Visor" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.515, 0.105)
+scale = Vector3(0.9, 0.54, 0.34)
+mesh = SubResource("Mesh_visor")
+
+[node name="Backpack" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.29, -0.115)
+scale = Vector3(1.45, 1.15, 0.62)
+mesh = SubResource("Mesh_box_cream")
+
+[node name="LeftArm" type="MeshInstance3D" parent="."]
+position = Vector3(-0.15, 0.29, 0)
+rotation_degrees = Vector3(0, 0, -12)
+mesh = SubResource("Mesh_box_cream")
+
+[node name="RightArm" type="MeshInstance3D" parent="."]
+position = Vector3(0.15, 0.29, 0)
+rotation_degrees = Vector3(0, 0, 12)
+mesh = SubResource("Mesh_box_cream")
+
+[node name="RayPistol" type="MeshInstance3D" parent="."]
+position = Vector3(0.205, 0.225, 0.045)
+rotation_degrees = Vector3(90, 0, 0)
+mesh = SubResource("Mesh_box_gold")
+
+[node name="LeftBoot" type="MeshInstance3D" parent="."]
+position = Vector3(-0.072, 0.125, 0.025)
+scale = Vector3(0.78, 0.65, 1.15)
+mesh = SubResource("Mesh_box_cream")
+
+[node name="RightBoot" type="MeshInstance3D" parent="."]
+position = Vector3(0.072, 0.125, 0.025)
+scale = Vector3(0.78, 0.65, 1.15)
+mesh = SubResource("Mesh_box_cream")
