@@ -1,7 +1,10 @@
-"""Render repeatable turntable previews for a character GLB.
+"""Render repeatable previews from a GLB or a draft Blender source.
 
 Usage:
-    blender --background --python tools/blender/render_character_preview.py -- input.glb output_dir
+    blender --background --python tools/blender/render_character_preview.py -- input.glb output_dir [three_quarter_elevation_degrees] [frame]
+
+Accepts .blend drafts so visual approval can precede the production GLB export.
+The input is never saved or overwritten.
 """
 
 from __future__ import annotations
@@ -20,15 +23,24 @@ def _look_at(camera: bpy.types.Object, target: Vector) -> None:
 
 def main() -> None:
     arguments = sys.argv[sys.argv.index("--") + 1 :]
-    if len(arguments) != 2:
-        raise SystemExit("Expected input GLB and output directory")
+    if len(arguments) not in (2, 3, 4):
+        raise SystemExit("Expected input GLB or BLEND, output directory and optional three-quarter elevation")
 
     input_path = Path(arguments[0]).resolve()
     output_dir = Path(arguments[1]).resolve()
+    elevation = math.radians(float(arguments[2])) if len(arguments) >= 3 else 0.0
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    bpy.ops.wm.read_factory_settings(use_empty=True)
-    bpy.ops.import_scene.gltf(filepath=str(input_path))
+    if input_path.suffix.lower() == ".blend":
+        bpy.ops.wm.open_mainfile(filepath=str(input_path))
+    elif input_path.suffix.lower() == ".glb":
+        bpy.ops.wm.read_factory_settings(use_empty=True)
+        bpy.ops.import_scene.gltf(filepath=str(input_path))
+    else:
+        raise SystemExit("Preview input must be a .glb or .blend file")
+    if len(arguments) == 4:
+        bpy.context.scene.frame_set(int(arguments[3]))
+    bpy.context.view_layer.update()
     meshes = [obj for obj in bpy.context.scene.objects if obj.type == "MESH"]
     corners = [obj.matrix_world @ Vector(corner) for obj in meshes for corner in obj.bound_box]
     minimum = Vector((min(v.x for v in corners), min(v.y for v in corners), min(v.z for v in corners)))
@@ -40,6 +52,8 @@ def main() -> None:
     bpy.ops.object.camera_add()
     camera = bpy.context.object
     camera.data.lens = 60
+    camera.data.sensor_fit = "HORIZONTAL"
+    camera.data.clip_start = 0.001
     bpy.context.scene.camera = camera
 
     bpy.ops.object.light_add(type="AREA", location=(3.0, -4.0, 5.0))
@@ -67,12 +81,22 @@ def main() -> None:
 
     views = {
         "front": Vector((0.0, -radius, target.z)),
-        "three_quarter": Vector((radius * 0.7, -radius * 0.7, target.z)),
+        "side": Vector((radius, 0.0, target.z)),
+        "three_quarter": Vector((radius * math.cos(elevation) / math.sqrt(2),
+                                 -radius * math.cos(elevation) / math.sqrt(2),
+                                 target.z + radius * math.sin(elevation))),
         "back": Vector((0.0, radius, target.z)),
     }
     for label, location in views.items():
         camera.location = location
         _look_at(camera, target)
+        # Fit every bounds corner, including depth, instead of cropping bulky props.
+        camera_basis = camera.rotation_euler.to_matrix().transposed()
+        local_corners = [camera_basis @ (corner - target) for corner in corners]
+        half_angle_tangent = math.tan(camera.data.angle / 2.0)
+        distance = max(max(abs(v.x), abs(v.y)) / half_angle_tangent + v.z
+                       for v in local_corners) * 1.15
+        camera.location = target + (location - target).normalized() * distance
         scene.render.filepath = str(output_dir / f"{input_path.stem}_{label}.png")
         bpy.ops.render.render(write_still=True)
 

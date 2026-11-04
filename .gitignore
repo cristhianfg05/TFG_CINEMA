@@ -1,5 +1,8 @@
 # Godot generated data
 .godot/
+.codex_sprint_test*/
+__pycache__/
+*.py[cod]
 
 # Builds and exported packages
 builds/*
@@ -10,6 +13,8 @@ builds/*
 # Local-only heavy originals and rejected generations
 source_assets/local_originals/*
 !source_assets/local_originals/README.md
+audio_source/rejected/
+audio_source/**/*.import
 
 # Local staging files; production copies live outside this folder
 assets/characters/placeholders/

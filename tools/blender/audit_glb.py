@@ -36,8 +36,9 @@ def audit(path: Path) -> dict[str, object]:
     bpy.ops.wm.read_factory_settings(use_empty=True)
     bpy.ops.import_scene.gltf(filepath=str(path))
 
-    meshes = [obj for obj in bpy.context.scene.objects if obj.type == "MESH"]
     armatures = [obj for obj in bpy.context.scene.objects if obj.type == "ARMATURE"]
+    bone_shapes = {bone.custom_shape for rig in armatures for bone in rig.pose.bones if bone.custom_shape}
+    meshes = [obj for obj in bpy.context.scene.objects if obj.type == "MESH" and obj not in bone_shapes]
     materials = {
         slot.material.name
         for obj in meshes
@@ -56,6 +57,10 @@ def audit(path: Path) -> dict[str, object]:
         boundary_edges = sum(1 for edge in check_mesh.edges if edge.is_boundary)
         non_manifold_edges = sum(1 for edge in check_mesh.edges if not edge.is_manifold)
         degenerate_faces = sum(1 for face in check_mesh.faces if face.calc_area() < 1e-10)
+        # GLB splits vertices at UV/normal/color seams. Weld only this disposable
+        # copy to distinguish those splits from geometric openings in the surface.
+        bmesh.ops.remove_doubles(check_mesh, verts=list(check_mesh.verts), dist=1e-6)
+        geometric_boundaries = sum(1 for edge in check_mesh.edges if edge.is_boundary)
         geometry_checks.append(
             {
                 "object": obj.name,
@@ -63,6 +68,7 @@ def audit(path: Path) -> dict[str, object]:
                 "boundary_edges": boundary_edges,
                 "non_manifold_edges": non_manifold_edges,
                 "degenerate_faces": degenerate_faces,
+                "boundary_edges_after_position_weld": geometric_boundaries,
             }
         )
         check_mesh.free()
@@ -86,6 +92,7 @@ def audit(path: Path) -> dict[str, object]:
         "bytes": path.stat().st_size,
         "objects": len(bpy.context.scene.objects),
         "mesh_objects": len(meshes),
+        "excluded_bone_display_shapes": len(bone_shapes),
         "vertices": sum(len(obj.data.vertices) for obj in meshes),
         "triangles": triangles,
         "geometry_checks": geometry_checks,

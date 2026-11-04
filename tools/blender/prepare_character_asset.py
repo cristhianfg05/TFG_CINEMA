@@ -2,7 +2,7 @@
 
 Usage:
     blender --background --python tools/blender/prepare_character_asset.py -- \
-        input.glb output.blend output.glb asset_id [triangle_budget]
+        input.glb_or_blend output.blend output.glb asset_id [triangle_budget]
 
 This script is deliberately conservative: it preserves UVs and materials, removes
 only degenerate faces, applies object transforms, recentres the feet at the origin,
@@ -59,13 +59,18 @@ def main() -> None:
     input_path = Path(arguments[0]).resolve()
     blend_path = Path(arguments[1]).resolve()
     glb_path = Path(arguments[2]).resolve()
+    if input_path in (blend_path, glb_path):
+        raise SystemExit("Source must be separate from production outputs")
     asset_id = arguments[3]
     triangle_budget = int(arguments[4]) if len(arguments) == 5 else 15_000
     blend_path.parent.mkdir(parents=True, exist_ok=True)
     glb_path.parent.mkdir(parents=True, exist_ok=True)
 
-    bpy.ops.wm.read_factory_settings(use_empty=True)
-    bpy.ops.import_scene.gltf(filepath=str(input_path))
+    if input_path.suffix.lower() == ".blend":
+        bpy.ops.wm.open_mainfile(filepath=str(input_path))
+    else:
+        bpy.ops.wm.read_factory_settings(use_empty=True)
+        bpy.ops.import_scene.gltf(filepath=str(input_path))
     scene = bpy.context.scene
     scene.unit_settings.system = "METRIC"
     scene.unit_settings.scale_length = 1.0
@@ -109,6 +114,7 @@ def main() -> None:
     scene["pipeline_phase"] = 4
     scene["asset_id"] = asset_id
     scene["source_glb"] = input_path.as_posix()
+    scene["asset_status"] = "production_candidate"
     scene["triangle_budget"] = triangle_budget
     scene["front_axis"] = "-Y in Blender / +Z after Godot import; container rotates visual to -Z"
     bpy.ops.file.pack_all()
