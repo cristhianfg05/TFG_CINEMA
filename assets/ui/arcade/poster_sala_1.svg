@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="220" viewBox="0 0 160 220" shape-rendering="crispEdges">
+  <rect width="160" height="220" fill="#111217"/><rect x="5" y="5" width="150" height="210" fill="#6b2430" stroke="#e7b34e" stroke-width="5"/>
+  <path d="M14 20h132v26H14zM14 178h132v26H14z" fill="#e7b34e"/><path d="M20 55h120v111H20z" fill="#1d2635"/>
+  <path d="M26 148l27-72 27 23 27-45 27 94z" fill="#294b6d"/><path d="M47 133l33-61 33 61z" fill="#f2dfac"/>
+  <circle cx="80" cy="86" r="20" fill="#e7b34e"/><circle cx="80" cy="86" r="12" fill="#6b2430"/><path d="M80 67v38M61 86h38" stroke="#f2dfac" stroke-width="5"/>
+  <path d="M28 160h104" stroke="#e7b34e" stroke-width="4"/><path d="M35 27h6m12 0h6m48 0h6m12 0h6M35 192h6m12 0h6m48 0h6m12 0h6" stroke="#6b2430" stroke-width="5"/>
+  <text x="80" y="38" text-anchor="middle" font-family="monospace" font-size="15" font-weight="bold" fill="#111217">SALA 1</text>
+  <text x="80" y="196" text-anchor="middle" font-family="monospace" font-size="11" font-weight="bold" fill="#111217">CARTEL ARCADE</text>
+</svg>
