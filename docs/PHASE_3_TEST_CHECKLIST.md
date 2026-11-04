@@ -6,7 +6,7 @@ Esta es la primera vertical slice. Debe jugarse desde cero sin la tecla de reini
 
 1. Ejecuta el proyecto con F5.
 2. Pulsa `Nueva partida` para borrar cualquier progreso anterior.
-3. Apunta cerca de la basura y usa clic derecho para recogerla; `E` interactúa y guarda el reloj, clic izquierdo lo destruye y `Esc` abre la pausa.
+3. Apunta hasta ver el resaltado de la basura y usa clic derecho para recogerla; `E` interactúa y guarda el reloj, clic izquierdo lo destruye y `Esc` abre la pausa.
 
 ## Recorrido obligatorio
 

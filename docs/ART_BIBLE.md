@@ -28,4 +28,5 @@ Los presupuestos de polígonos y las reglas finales se confirmarán en la FASE 4
 - LOD0 de NPC limitado a 15.000 triángulos y a un material siempre que no se degrade la lectura.
 - GLB de producción en `assets/characters/production/`; fuente editable en `source_assets/blender/characters/`.
 - Cada GLB se usa mediante una escena contenedora con colisión primitiva independiente.
-- Los GLB generados se conservan sin rig hasta validar una estructura de huesos común.
+- Los originales GLB y Blender sin rig se conservan. El manager tiene un rig piloto propio de 23 huesos con nombres de SkeletonProfileHumanoid; el retargeting general queda pendiente de validar antes de aplicarlo a otros NPC.
+- Basura modelada por script: copias Blender en `source_assets/blender/props/`, GLB en `assets/models/trash/production/`, contenedores en `scenes/props/`. Un material con colores por vértice, UV inicial y colisión cilíndrica. El material del contenedor activa explícitamente los colores por vértice en Godot.

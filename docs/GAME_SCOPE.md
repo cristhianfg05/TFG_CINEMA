@@ -53,5 +53,5 @@ El hardware mínimo es una hipótesis de trabajo, no una promesa. Se validará m
 - FASE 1 — Controlador y sala inicial en bloques: completada y aprobada el 2026-09-06.
 - FASE 2 — Núcleo de limpieza: completada y aprobada el 2026-09-06.
 - FASE 3 — Primera vertical slice: completada y aprobada el 2026-09-07.
-- FASE 4 — Pipeline artístico definitivo: en curso; cuatro personajes han llegado a importación y falta un quinto asset, rig y aprobación final.
+- FASE 4 — Pipeline artístico definitivo: en curso; manager con rig piloto e idle de cabeza y tres modelos de basura integrados. Los otros tres personajes quedan en la galería técnica. Pendientes feedback manual, rendimiento jugable sostenido y completar procedencia; sin etiqueta de cierre.
 - No autorizado todavía: contenido de FASE 5 o posteriores.

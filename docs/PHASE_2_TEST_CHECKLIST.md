@@ -4,13 +4,13 @@ Juega el bucle durante unos diez minutos. Los modelos son primitivas provisional
 
 ## Controles nuevos
 
-- Recoger basura: apuntar cerca del objeto hasta ver el mensaje y usar clic derecho.
+- Recoger basura: apuntar hasta ver el resaltado y usar clic derecho; no aparece texto contextual para cada residuo.
 - Vaciar: E mientras aparece el mensaje contextual del contenedor.
 - Reiniciar la prueba: R. Esta tecla es solo de depuración.
 
 ## Comprobaciones obligatorias
 
-- [ ] La esfera invisible reducida facilita apuntar a la basura pequeña y aparece `Clic derecho — Recoger`.
+- [ ] La esfera invisible facilita apuntar sin mostrar `Clic derecho — Recoger`; la pajita usa un objetivo mayor que el resto.
 - [ ] Caminar sobre la basura no la recoge sin pulsar E.
 - [ ] Cada objeto desaparece una sola vez al recogerlo.
 - [ ] La bolsa aumenta según el volumen y nunca supera 10.
@@ -19,7 +19,7 @@ Juega el bucle durante unos diez minutos. Los modelos son primitivas provisional
 - [ ] Vaciar repetidamente una bolsa vacía no concede monedas adicionales.
 - [ ] Los 20 objetos son alcanzables.
 - [ ] El porcentaje se basa en objetos restantes y llega exactamente al 100 %.
-- [ ] Los sonidos de recoger y vaciar se oyen sin resultar molestos.
+- [ ] Los sonidos de recoger, vaciar y rechazo se distinguen sin resultar molestos; al fallar, el punto de mira vibra suavemente y no aparece un aviso textual.
 - [ ] El bucle completo dura aproximadamente entre 5 y 10 minutos.
 
 Anota si recoger resulta lento, automático, confuso o repetitivo y señala cualquier objeto inaccesible.
