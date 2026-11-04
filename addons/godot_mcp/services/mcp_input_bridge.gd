@@ -3,6 +3,9 @@ extends Node
 
 const QUEUE_FILE := "mcp_input_queue.json"
 
+func _ready() -> void:
+	if not OS.is_debug_build():
+		set_process(false)
 
 func queue_events(events: Array) -> void:
 	var path := OS.get_user_data_dir().path_join(QUEUE_FILE)

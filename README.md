@@ -2,6 +2,18 @@
 
 Proyecto de TFG: juego de limpieza en primera persona desarrollado con Godot y GDScript para Windows. Estética low-poly, cuatro salas construidas y una sala final pendiente de completar.
 
+## Entrega PEC 2 — pec2-v0.1.0
+
+1. Abre la [release pec2-v0.1.0](https://github.com/cristhianfg05/TFG_CINEMA/releases/tag/pec2-v0.1.0) y descarga **pec2-v0.1.0-windows-x86_64.zip**.
+2. Extrae el ZIP completo en una carpeta de Windows de 64 bits.
+3. Ejecuta **CinemaCleaner.exe**. Conserva **CinemaCleaner.pck** en la misma carpeta; no ejecutes el juego desde dentro del ZIP.
+
+La descarga es portable: **no necesitas instalar Godot, Blender ni Python para jugar**. El repositorio es privado; el enlace de GitHub requiere una cuenta con acceso.
+
+Controles básicos: **WASD** para moverse, ratón para mirar, **clic derecho** para recoger, **clic izquierdo** para escoba/aspiradora, **E** para interactuar y entregar, **Q** para cambiar de herramienta, **Tab** para el diario y **Esc** para pausar.
+
+Para recompilar esta entrega, usa Godot 4.7.2 Standard y Python 3, descarga los assets con Git LFS y ejecuta `./tools/build/export_pec2_windows.ps1`. El script obtiene únicamente las plantillas oficiales de Windows, las verifica y genera el ZIP bajo `builds/`. Puedes indicar la ruta de Python mediante `-Python`.
+
 ## Requisitos
 
 - **Godot 4.7.2 Standard**, edición de 64 bits. Es la versión con la que se valida el proyecto; no necesita .NET.
@@ -84,4 +96,4 @@ Las pruebas de renderizado necesitan una ventana y no deben ejecutarse con `--he
 - [Pipeline de audio](docs/pipeline/AUDIO_PIPELINE.md) y [criterios de generación y mezcla](docs/pipeline/AUDIO_BIBLE.md).
 - [Registro de pruebas](docs/TEST_LOG.md).
 
-Los informes de Fase 4 y las referencias a builds `0.4.0-playtest.*` documentan pilotos anteriores. Las builds exportadas son locales y no se incluyen en el repositorio; no son necesarias para abrir `project.godot` en el editor.
+Los informes de Fase 4 y las referencias a builds `0.4.0-playtest.*` documentan pilotos anteriores. Los ejecutables se distribuyen como adjuntos de las releases; la carpeta local `builds/` no se versiona y no es necesaria para abrir `project.godot` en el editor.

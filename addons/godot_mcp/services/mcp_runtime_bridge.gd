@@ -11,6 +11,9 @@ var _recording: Array = []
 var _is_recording := false
 var _handling := false
 
+func _ready() -> void:
+	if not OS.is_debug_build():
+		set_process(false)
 
 func _process(_delta: float) -> void:
 	if Engine.is_editor_hint():

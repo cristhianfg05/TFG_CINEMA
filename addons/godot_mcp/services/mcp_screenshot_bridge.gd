@@ -5,6 +5,9 @@ const REQUEST_FILE := "mcp_screenshot_req.json"
 const RESPONSE_FILE := "mcp_screenshot_res.png"
 const META_FILE := "mcp_screenshot_meta.json"
 
+func _ready() -> void:
+	if not OS.is_debug_build():
+		set_process(false)
 
 func _process(_delta: float) -> void:
 	if not Engine.is_editor_hint():

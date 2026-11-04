@@ -35,7 +35,7 @@ func _build_ui() -> void:
 	content.add_child(title)
 
 	var subtitle := Label.new()
-	subtitle.text = "Prueba de arte — FASE 4"
+	subtitle.text = "PEC 2 · %s" % ProjectSettings.get_setting("application/config/version")
 	subtitle.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	subtitle.add_theme_font_size_override("font_size", 20)
 	content.add_child(subtitle)
