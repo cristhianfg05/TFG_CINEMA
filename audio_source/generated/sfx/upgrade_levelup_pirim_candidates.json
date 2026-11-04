@@ -1,0 +1,45 @@
+[
+  {
+    "candidate": 1,
+    "file": "audio_source\\generated\\sfx\\upgrade_levelup_pirim_candidate_01.wav",
+    "seconds": 0.4002040816326531,
+    "peak_dbfs": -15.76,
+    "rms_dbfs": -26.0,
+    "seed": 31103,
+    "source": "audio_source/raw/sfx/upgrade_levelup_pirim_v3_01.wav",
+    "model": "sm-sfx",
+    "decoder": "same-s",
+    "steps": 16,
+    "cfg": 3,
+    "status": "not_selected"
+  },
+  {
+    "candidate": 2,
+    "file": "audio_source\\generated\\sfx\\upgrade_levelup_pirim_candidate_02.wav",
+    "seconds": 0.4534467120181406,
+    "peak_dbfs": -15.15,
+    "rms_dbfs": -26.0,
+    "seed": 31104,
+    "source": "audio_source/raw/sfx/upgrade_levelup_pirim_v3_02.wav",
+    "model": "sm-sfx",
+    "decoder": "same-s",
+    "steps": 16,
+    "cfg": 3,
+    "status": "not_selected"
+  },
+  {
+    "candidate": 3,
+    "file": "audio_source\\generated\\sfx\\upgrade_levelup_pirim_candidate_03.wav",
+    "seconds": 0.3924489795918367,
+    "peak_dbfs": -16.23,
+    "rms_dbfs": -26.0,
+    "seed": 31105,
+    "source": "audio_source/raw/sfx/upgrade_levelup_pirim_v3_03.wav",
+    "model": "sm-sfx",
+    "decoder": "same-s",
+    "steps": 16,
+    "cfg": 3,
+    "status": "approved_integrated",
+    "production_asset": "assets/audio/sfx/ui/upgrade_levelup_03.wav"
+  }
+]

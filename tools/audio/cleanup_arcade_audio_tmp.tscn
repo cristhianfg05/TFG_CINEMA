@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bh0sqjfldmaf1"]
+
+[ext_resource type="Script" uid="uid://jnti82artemv" path="res://tools/audio/cleanup_arcade_audio_tmp.gd" id="1_0s0qb"]
+
+[node name="cleanup_arcade_audio_tmp" type="Node" unique_id=1390782904]
+script = ExtResource("1_0s0qb")

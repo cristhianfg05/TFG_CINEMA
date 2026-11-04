@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c7ypp3fa6m7pc"]
+
+[ext_resource type="Script" uid="uid://d3r0vy8wpelyt" path="res://tools/audio/arcade_audio_regen_tmp.gd" id="1_ynden"]
+
+[node name="arcade_audio_regen_tmp" type="Node" unique_id=1548580783]
+script = ExtResource("1_ynden")
