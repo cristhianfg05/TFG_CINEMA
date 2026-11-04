@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="900" viewBox="0 0 600 900">
+  <rect width="600" height="900" fill="#2b2528"/>
+  <rect x="23" y="22" width="554" height="856" fill="#4b4140" stroke="#b69a70" stroke-width="9"/>
+  <rect x="42" y="42" width="516" height="816" fill="#393438"/>
+  <path d="M42 620 Q300 540 558 625V858H42Z" fill="#1d2028"/>
+  <circle cx="305" cy="335" r="142" fill="#786a5d" opacity=".32"/>
+  <path d="m183 430 92-185-17-103 83 72 73 205-95-24-91 47z" fill="#181a22" stroke="#ab906d" stroke-width="6"/>
+  <path d="M153 419q132 62 300 2l-9 37q-141 32-284-1z" fill="#191b23" stroke="#ab906d" stroke-width="5"/>
+  <path d="M256 458q-73 72-76 157h258q-13-94-82-155z" fill="#17191f"/>
+  <path d="M282 483q23 17 48 0l-9 46h-28z" fill="#b8a38a"/>
+  <path d="M268 537q39 25 76 0" fill="none" stroke="#79605d" stroke-width="7"/>
+  <path d="M70 83l42 22-15 30M499 83l-34 17 15 37M74 733l26-29 16 8M523 745l-23-31-23 8" fill="none" stroke="#947f69" stroke-width="8" opacity=".55"/>
+  <g fill="#d2b98d" opacity=".38">
+    <circle cx="112" cy="292" r="6"/><circle cx="482" cy="251" r="5"/><circle cx="125" cy="537" r="4"/><circle cx="495" cy="540" r="6"/>
+  </g>
+  <text x="300" y="708" fill="#e0c59b" font-family="serif" font-size="65" font-weight="bold" text-anchor="middle">LA BRUJA</text>
+  <text x="300" y="763" fill="#a58d78" font-family="serif" font-size="27" text-anchor="middle">ACECHA EN LA OSCURIDAD</text>
+</svg>

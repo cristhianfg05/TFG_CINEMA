@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="PackedScene" path="res://assets/pipeline/props/manager_lever_box.glb" id="1_model"]
+[ext_resource type="Script" path="res://scripts/manager_lever_box.gd" id="2_script"]
+[ext_resource type="AudioStream" path="res://assets/audio/sfx/machines/manager_lever_cartoon_spark_03.wav" id="3_activation_spark"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_housing"]
+size = Vector3(2.34, 1.235, 0.24)
+
+[node name="ManagerLeverBox" type="Node3D"]
+script = ExtResource("2_script")
+activation_sfx = ExtResource("3_activation_spark")
+
+[node name="Model" parent="." instance=ExtResource("1_model")]
+
+[node name="HousingCollision" type="StaticBody3D" parent="."]
+position = Vector3(0, 0.6, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HousingCollision"]
+shape = SubResource("BoxShape3D_housing")
