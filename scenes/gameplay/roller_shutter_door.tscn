@@ -1,0 +1,44 @@
+[gd_scene load_steps=11 format=3]
+
+[ext_resource type="Script" path="res://scripts/roller_shutter_door.gd" id="1_script"]
+[ext_resource type="Material" path="res://resources/materials/roller_shutter_slat.tres" id="2_slat"]
+[ext_resource type="Material" path="res://resources/materials/roller_shutter_frame.tres" id="3_frame"]
+[ext_resource type="Material" path="res://resources/materials/roller_shutter_wear.tres" id="4_wear"]
+
+[sub_resource type="BoxMesh" id="SlatMesh"]
+material = ExtResource("2_slat")
+size = Vector3(3, 0.175, 0.12)
+
+[sub_resource type="BoxMesh" id="SlatEdgeMesh"]
+material = ExtResource("4_wear")
+size = Vector3(2.88, 0.018, 0.014)
+
+[sub_resource type="BoxMesh" id="GrooveMesh"]
+material = ExtResource("3_frame")
+size = Vector3(3, 0.025, 0.018)
+
+[sub_resource type="BoxMesh" id="SideFrameMesh"]
+material = ExtResource("3_frame")
+size = Vector3(0.18, 2.8, 0.28)
+
+[sub_resource type="BoxMesh" id="HousingMesh"]
+material = ExtResource("3_frame")
+size = Vector3(3.36, 0.4, 0.36)
+
+[sub_resource type="BoxMesh" id="HousingLipMesh"]
+material = ExtResource("4_wear")
+size = Vector3(3.18, 0.075, 0.055)
+
+[sub_resource type="BoxShape3D" id="BlockerShape"]
+size = Vector3(3, 2.8, 0.18)
+
+[node name="RollerShutterDoor" type="Node3D"]
+script = ExtResource("1_script")
+slat_mesh = SubResource("SlatMesh")
+slat_edge_mesh = SubResource("SlatEdgeMesh")
+groove_mesh = SubResource("GrooveMesh")
+side_frame_mesh = SubResource("SideFrameMesh")
+housing_mesh = SubResource("HousingMesh")
+housing_lip_mesh = SubResource("HousingLipMesh")
+blocker_shape = SubResource("BlockerShape")
+
