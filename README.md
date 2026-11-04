@@ -8,7 +8,7 @@ Proyecto de TFG: juego de limpieza en primera persona desarrollado con Godot y G
 2. Extrae el ZIP completo en una carpeta de Windows de 64 bits.
 3. Ejecuta **CinemaCleaner.exe**. Conserva **CinemaCleaner.pck** en la misma carpeta; no ejecutes el juego desde dentro del ZIP.
 
-La descarga es portable: **no necesitas instalar Godot, Blender ni Python para jugar**. El repositorio es privado; el enlace de GitHub requiere una cuenta con acceso.
+La descarga es portable: **no necesitas instalar Godot, Blender ni Python para jugar**. El repositorio y la release son públicos; puedes descargar el juego sin iniciar sesión en GitHub.
 
 Controles básicos: **WASD** para moverse, ratón para mirar, **clic derecho** para recoger, **clic izquierdo** para escoba/aspiradora, **E** para interactuar y entregar, **Q** para cambiar de herramienta, **Tab** para el diario y **Esc** para pausar.
 
